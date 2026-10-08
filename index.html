@@ -508,7 +508,7 @@ main { flex: 1; min-height: 0; position: relative; }
    DIALOGS
    ============================================================ */
 .modal-backdrop {
-  position: fixed; inset: 0; z-index: 300;
+  position: fixed; inset: 0; z-index: 450;
   background: var(--scrim);
   display: flex; align-items: center; justify-content: center;
   padding: 24px;
@@ -773,6 +773,40 @@ html[data-theme="dark"] .toast { background: #e3e3e3; color: #1f1f1f; }
 @keyframes toastIn { from { opacity: 0; transform: translateY(10px); } }
 
 /* ============================================================
+   FULL SCREEN MODE (entry viewer + entry editor)
+   ============================================================ */
+.overlay, .modal-backdrop { transition: opacity .18s, padding .2s; }
+.overlay-panel, .modal { transition: transform .15s, border-radius .2s; }
+.overlay.fullscreen, .modal-backdrop.fullscreen { padding: 0; }
+.overlay.fullscreen .overlay-panel {
+  max-width: none; max-height: none; height: 100%; border-radius: 0;
+}
+.overlay.fullscreen .ov-head { border-radius: 0; padding: 20px 28px 16px 48px; }
+.overlay.fullscreen .ov-title { font-size: 30px; }
+.overlay.fullscreen .ov-body {
+  padding: 8px 48px 56px; width: 100%; max-width: 1500px; margin: 0 auto; gap: 28px;
+}
+.overlay.fullscreen .ov-desc { font-size: 17px; line-height: 1.75; }
+.overlay.fullscreen .ov-label { font-size: 13px; }
+.overlay.fullscreen .ov-carousel { max-height: calc(100vh - 190px); min-height: 320px; }
+.overlay.fullscreen .ov-carousel img { max-height: calc(100vh - 190px); }
+.overlay.fullscreen .ov-link { font-size: 15px; }
+.modal.fullscreen {
+  max-width: none; max-height: none; width: 100%; height: 100%; border-radius: 0;
+}
+.modal.fullscreen .modal-head { padding: 20px 28px 8px 48px; }
+.modal.fullscreen .modal-body {
+  padding: 12px 48px 28px; width: 100%; max-width: 1500px; margin: 0 auto;
+}
+.modal.fullscreen .modal-foot { padding: 12px 48px 28px; }
+.modal.fullscreen .modal-grid { grid-template-columns: minmax(300px, 380px) 1fr; gap: 40px; }
+.modal.fullscreen textarea.input { min-height: 180px; }
+@media (max-width: 720px) {
+  .overlay.fullscreen .ov-head, .modal.fullscreen .modal-head { padding-left: 20px; }
+  .overlay.fullscreen .ov-body, .modal.fullscreen .modal-body, .modal.fullscreen .modal-foot { padding-left: 20px; padding-right: 20px; }
+}
+
+/* ============================================================
    SMALL SCREENS
    ============================================================ */
 @media (max-width: 720px) {
@@ -880,6 +914,8 @@ const ICON_PATHS = {
   list: '<path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/>',
   alert: '<circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 17h.01"/>',
   link: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+  expand: '<path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/>',
+  collapse: '<path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="m14 10 7-7"/><path d="m3 21 7-7"/>',
   pin: '<path d="M12 21s-7-5.7-7-11a7 7 0 1 1 14 0c0 5.3-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>'
 };
 
@@ -1506,11 +1542,30 @@ function openPopover(anchor, content) {
    ============================================================ */
 let modalStack = [];
 
-function openModal({ title, body, actions = [], wide = false }) {
+function openModal({ title, body, actions = [], wide = false, expandable = false, fullscreen = false }) {
   const backdrop = h('div', { class: 'modal-backdrop' });
   const modal = h('div', { class: 'modal' + (wide ? ' modal-wide' : '') });
   const closeBtn = h('button', { class: 'icon-btn', title: 'Close', type: 'button' }, iconEl('close'));
-  const head = h('div', { class: 'modal-head' }, h('h3', {}, title), closeBtn);
+  const headKids = [h('h3', {}, title)];
+  if (expandable) {
+    const fsBtn = h('button', { class: 'icon-btn', type: 'button' });
+    const sync = () => {
+      const on = modal.classList.contains('fullscreen');
+      fsBtn.title = on ? 'Exit full screen' : 'Full screen';
+      fsBtn.replaceChildren(iconEl(on ? 'collapse' : 'expand', 18));
+      scheduleScrollbars();
+    };
+    fsBtn.addEventListener('click', () => {
+      modal.classList.toggle('fullscreen');
+      backdrop.classList.toggle('fullscreen');
+      sync();
+    });
+    if (fullscreen) { modal.classList.add('fullscreen'); backdrop.classList.add('fullscreen'); }
+    sync();
+    headKids.push(fsBtn);
+  }
+  headKids.push(closeBtn);
+  const head = h('div', { class: 'modal-head' }, headKids);
   const bodyEl = h('div', { class: 'modal-body', 'data-csb': 'y' }, body);
   const foot = h('div', { class: 'modal-foot' }, actions);
   modal.append(head, bodyEl, foot);
@@ -1571,6 +1626,9 @@ function renderApp() {
   document.querySelectorAll('.nav-tab').forEach(t => {
     t.classList.toggle('active', t.dataset.view === currentView);
   });
+
+  const ngBtn = document.getElementById('new-group-btn');
+  if (ngBtn) ngBtn.classList.toggle('hidden', currentView !== 'home');
 
   scheduleRefresh();
 }
@@ -2044,6 +2102,7 @@ function openGroupModal(group) {
 /* ============================================================
    ENTRY MODAL (create / edit)
    ============================================================ */
+let pendingEditFullscreen = false;
 function openEntryModal(group, entry) {
   const isEdit = !!entry;
   const draft = entry
@@ -2229,8 +2288,11 @@ function openEntryModal(group, entry) {
   const modal = openModal({
     title: isEdit ? 'Edit Entry' : 'New Entry',
     body: wrap,
-    actions: [cancelBtn, saveBtn]
+    actions: [cancelBtn, saveBtn],
+    expandable: true,
+    fullscreen: pendingEditFullscreen
   });
+  pendingEditFullscreen = false;
 
   cancelBtn.addEventListener('click', modal.close);
 
@@ -2581,6 +2643,7 @@ function createTagPicker(group, selectedIds, onChange) {
    ENTRY OVERLAY
    ============================================================ */
 let closeOverlay = () => {};
+let overlayFullscreenPref = false;
 
 function openEntryOverlay(group, entry) {
   const root = document.getElementById('overlay-root');
@@ -2594,8 +2657,21 @@ function openEntryOverlay(group, entry) {
 
   const closeBtn = h('button', { class: 'icon-btn', type: 'button', title: 'Close' }, iconEl('close', 18));
 
+  const fsBtn = h('button', { class: 'icon-btn', type: 'button' });
+  const syncFs = () => {
+    const on = ov.classList.contains('fullscreen');
+    fsBtn.title = on ? 'Exit full screen' : 'Full screen';
+    fsBtn.replaceChildren(iconEl(on ? 'collapse' : 'expand', 18));
+    overlayFullscreenPref = on;
+    scheduleScrollbars();
+  };
+  fsBtn.addEventListener('click', () => { ov.classList.toggle('fullscreen'); syncFs(); });
+  if (overlayFullscreenPref) ov.classList.add('fullscreen');
+  syncFs();
+
   const editBtn = h('button', { class: 'icon-btn', type: 'button', title: 'Edit entry' }, iconEl('edit', 17));
   editBtn.addEventListener('click', () => {
+    pendingEditFullscreen = ov.classList.contains('fullscreen');
     close();
     openEntryModal(group, entry);
   });
@@ -2618,7 +2694,7 @@ function openEntryOverlay(group, entry) {
         group.name + ' · created ' + fmtDate(entry.createdAt) +
         (entry.updatedAt && entry.updatedAt !== entry.createdAt ? ' · edited ' + fmtDate(entry.updatedAt) : ''))
     ),
-    editBtn, delBtn, closeBtn
+    fsBtn, editBtn, delBtn, closeBtn
   );
 
   const body = h('div', { class: 'ov-body' });
