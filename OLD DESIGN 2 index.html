@@ -1,0 +1,3373 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#131314" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f8fafd" media="(prefers-color-scheme: light)">
+<title>Listly</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20version=%221.1%22%20id=%22Capa_1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%20x=%220px%22%20y=%220px%22%20viewBox=%220%200%20380%20380%22%20style=%22enable-background:new%200%200%20380%20380%3B%22%20xml:space=%22preserve%22%3E%20%3Cg%20id=%22XMLID_1244_%22%3E%20%3Crect%20id=%22XMLID_1245_%22%20x=%2280.001%22%20style=%22fill:%235A8BB0%3B%22%20width=%2230%22%20height=%2230%22/%3E%20%3Cpolygon%20id=%22XMLID_1246_%22%20style=%22fill:%23CDCDD0%3B%22%20points=%22340%2C30%20340%2C90%20190.001%2C90%20190.001%2C120%20240.001%2C120%20240.001%2C150%20190.001%2C150%20190.001%2C180%20270%2C180%20270%2C210%20190.001%2C210%20190.001%2C240%20270%2C240%20270%2C270%20190.001%2C270%20190.001%2C300%20270%2C300%20270%2C330%20190.001%2C330%20190.001%2C380%20340%2C380%20340%2C30%20%22/%3E%20%3Cpath%20id=%22XMLID_1247_%22%20style=%22fill:%23DEDDE0%3B%22%20d=%22M170.001%2C330v-30h20v-30h-20v-30h20v-30h-20v-30h20v-30h-50v-30h50V90h-0.001H40%20v290h150v-50H170.001z%20M140.001%2C330h-30v-30h30V330z%20M140.001%2C270h-30v-30h30V270z%20M140.001%2C210h-30v-30h30V210z%22/%3E%20%3Crect%20id=%22XMLID_1252_%22%20x=%22110.001%22%20y=%22300%22%20style=%22fill:%23FFFFFF%3B%22%20width=%2230%22%20height=%2230%22/%3E%20%3Cpolygon%20id=%22XMLID_1253_%22%20style=%22fill:%23FFFFFF%3B%22%20points=%22170.001%2C330%20190.001%2C330%20270%2C330%20270%2C300%20190.001%2C300%20170.001%2C300%20%22/%3E%20%3Crect%20id=%22XMLID_1254_%22%20x=%22110.001%22%20y=%22240%22%20style=%22fill:%2364C37D%3B%22%20width=%2230%22%20height=%2230%22/%3E%20%3Cpolygon%20id=%22XMLID_1255_%22%20style=%22fill:%23FFFFFF%3B%22%20points=%22170.001%2C270%20190.001%2C270%20270%2C270%20270%2C240%20190.001%2C240%20170.001%2C240%20%22/%3E%20%3Crect%20id=%22XMLID_1256_%22%20x=%22110.001%22%20y=%22180%22%20style=%22fill:%2364C37D%3B%22%20width=%2230%22%20height=%2230%22/%3E%20%3Cpolygon%20id=%22XMLID_1257_%22%20style=%22fill:%23FFFFFF%3B%22%20points=%22170.001%2C210%20190.001%2C210%20270%2C210%20270%2C180%20190.001%2C180%20170.001%2C180%20%22/%3E%20%3Cpolygon%20id=%22XMLID_1258_%22%20style=%22fill:%23FFFFFF%3B%22%20points=%22140.001%2C150%20190.001%2C150%20240.001%2C150%20240.001%2C120%20190.001%2C120%20140.001%2C120%20%22/%3E%20%3Cpolygon%20id=%22XMLID_1259_%22%20style=%22fill:%2378B9EB%3B%22%20points=%22189.999%2C30%20175.001%2C30%20110.001%2C30%2080.001%2C30%2040%2C30%2040%2C30%2040%2C90%2040%2C90%20189.999%2C90%20%22/%3E%20%3Cpolygon%20id=%22XMLID_1260_%22%20style=%22fill:%235A8BB0%3B%22%20points=%22189.999%2C90%20190.001%2C90%20340%2C90%20340%2C30%20300%2C30%20300%2C0%20270%2C0%20270%2C30%20205.001%2C30%20205.001%2C0%20175.001%2C0%20175.001%2C30%20189.999%2C30%20%22/%3E%20%3C/g%3E%20%3C/svg%3E">
+<style>
+/* ============================================================
+   TOKENS — Material 3
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  /* Light — M3 baseline (blue seed) */
+  --bg: #f8fafd;
+  --bg-deep: #f8fafd;
+  --surface: #ffffff;
+  --col: #f0f4f9;
+  --card: #ffffff;
+  --pop: #ffffff;
+  --menu: #ffffff;
+  --well: #f0f4f9;
+  --surface-2: #f0f4f9;
+  --surface-3: #dde3ea;
+  --text: #1f1f1f;
+  --muted: #444746;
+  --border: #e1e5ea;
+  --outline: #747775;
+  --accent: #0b57d0;
+  --accent-hover: #0a4cb8;
+  --accent-soft: #d3e3fd;
+  --on-accent: #ffffff;
+  --on-soft: #041e49;
+  --danger: #b3261e;
+  --danger-soft: #f9dedc;
+  --on-danger: #ffffff;
+  --success: #146c2e;
+  --on-success: #ffffff;
+  --chart-1: #0b57d0;
+  --chart-2: #9334e6;
+  --chart-3: #188038;
+  --chart-4: #8e918f;
+  --state-hover: rgba(11,87,208,.08);
+  --state-press: rgba(11,87,208,.12);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.08);
+  --shadow: 0 2px 8px rgba(0,0,0,.10);
+  --shadow-lg: 0 6px 24px rgba(0,0,0,.16);
+  --scrim: rgba(0,0,0,.32);
+  --radius: 16px;
+  --sb-thumb: rgba(0,0,0,.2);
+  --sb-thumb-hover: rgba(0,0,0,.4);
+}
+
+html[data-theme="dark"] {
+  /* Dark — M3 neutral surfaces on #131314 */
+  --bg: #131314;
+  --bg-deep: #131314;
+  --surface: #1e1f20;
+  --col: #1e1f20;
+  --card: #282a2c;
+  --pop: #1e1f20;
+  --menu: #2b2d30;
+  --well: #282a2c;
+  --surface-2: #282a2c;
+  --surface-3: #37393b;
+  --text: #e3e3e3;
+  --muted: #c4c7c5;
+  --border: #333537;
+  --outline: #8e918f;
+  --accent: #a8c7fa;
+  --accent-hover: #c2d7fb;
+  --accent-soft: #2b4170;
+  --on-accent: #062e6f;
+  --on-soft: #d3e3fd;
+  --danger: #f2b8b5;
+  --danger-soft: #4a2220;
+  --on-danger: #601410;
+  --success: #6dd58c;
+  --on-success: #00391a;
+  --chart-1: #a8c7fa;
+  --chart-2: #d7aefb;
+  --chart-3: #81c995;
+  --chart-4: #8e918f;
+  --state-hover: rgba(168,199,250,.08);
+  --state-press: rgba(168,199,250,.12);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+  --shadow: 0 2px 8px rgba(0,0,0,.4);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,.55);
+  --scrim: rgba(0,0,0,.55);
+  --sb-thumb: rgba(255,255,255,.17);
+  --sb-thumb-hover: rgba(255,255,255,.34);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 14px;
+  letter-spacing: .1px;
+  -webkit-font-smoothing: antialiased;
+}
+button { font-family: inherit; }
+.hidden { display: none !important; }
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+.pad { padding: 8px 4px; }
+
+/* Hide native scrollbars wherever the custom one is used */
+[data-csb], textarea.input {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+[data-csb]::-webkit-scrollbar, textarea.input::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
+.csb {
+  position: fixed;
+  z-index: 150;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  border-radius: 999px;
+}
+.csb.visible { opacity: 1; pointer-events: auto; }
+.csb-y { width: 12px; }
+.csb-x { height: 12px; }
+.csb-thumb {
+  position: absolute;
+  border-radius: 999px;
+  background: var(--sb-thumb);
+  transition: background .15s ease;
+}
+.csb-y .csb-thumb { left: 3px; width: 6px; top: 0; }
+.csb-x .csb-thumb { top: 3px; height: 6px; left: 0; }
+.csb:hover .csb-thumb,
+.csb.dragging .csb-thumb { background: var(--sb-thumb-hover); }
+
+/* ============================================================
+   SPLASH
+   ============================================================ */
+.splash {
+  position: fixed; inset: 0; z-index: 1000;
+  background: var(--bg);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 16px;
+  transition: opacity .25s ease;
+}
+.splash.hide { opacity: 0; pointer-events: none; }
+.splash-spinner {
+  width: 36px; height: 36px;
+  border: 4px solid var(--accent-soft);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+.splash p { color: var(--muted); font-size: 14px; margin: 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ============================================================
+   TOP APP BAR
+   ============================================================ */
+.navbar {
+  height: 68px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 24px;
+  background: var(--bg);
+  z-index: 40;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 500; font-size: 22px; letter-spacing: 0;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  cursor: pointer;
+  padding: 6px 12px;
+  margin-left: -12px;
+  border-radius: 999px;
+  transition: background .15s ease;
+}
+.brand:hover { background: var(--state-hover); }
+.brand:active { background: var(--state-press); }
+.brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.brand-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+.nav-tabs { display: flex; gap: 4px; }
+.nav-tab {
+  border: 0; background: transparent; color: var(--muted);
+  height: 40px; padding: 0 20px; border-radius: 999px; cursor: pointer;
+  font-size: 14px; font-weight: 500; letter-spacing: .1px; transition: background .15s, color .15s;
+}
+.nav-tab:hover { background: var(--state-hover); color: var(--text); }
+.nav-tab.active { background: var(--accent-soft); color: var(--on-soft); }
+.nav-right { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 40px; padding: 0 22px; border-radius: 999px;
+  border: 1px solid var(--outline);
+  background: transparent; color: var(--accent);
+  font-size: 14px; font-weight: 500; letter-spacing: .1px; cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s, box-shadow .15s;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--state-hover); }
+.btn:active { background: var(--state-press); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.primary:hover { background: var(--accent); box-shadow: var(--shadow-sm); filter: brightness(1.06); }
+.btn.primary:active { filter: brightness(.95); }
+.btn.danger { color: var(--danger); border-color: var(--outline); }
+.btn.danger:hover { background: var(--danger-soft); }
+.btn.danger-solid { background: var(--danger); border-color: var(--danger); color: var(--on-danger); }
+.btn.danger-solid:hover { background: var(--danger); filter: brightness(1.06); box-shadow: var(--shadow-sm); }
+.btn.block { width: 100%; }
+.btn.sm { height: 32px; padding: 0 16px; font-size: 13px; }
+.btn.ghost { background: transparent; border-color: transparent; color: var(--accent); padding: 0 14px; }
+.btn.ghost:hover { background: var(--state-hover); }
+.btn:disabled { opacity: .38; cursor: not-allowed; box-shadow: none; }
+
+.icon-btn {
+  width: 36px; height: 36px; flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 0;
+  background: transparent; color: var(--muted);
+  cursor: pointer; transition: background .15s, color .15s; padding: 0;
+}
+.icon-btn:hover { background: var(--state-hover); color: var(--text); }
+.icon-btn:active { background: var(--state-press); }
+.icon-btn.danger:hover { background: var(--danger-soft); color: var(--danger); }
+.ico { display: inline-flex; align-items: center; justify-content: center; }
+.ico svg { display: block; }
+
+/* ============================================================
+   INPUTS — outlined text fields
+   ============================================================ */
+.input, textarea.input, select.input {
+  width: 100%; padding: 12px 16px;
+  border-radius: 12px; border: 1px solid var(--outline);
+  background: transparent; color: var(--text);
+  font-size: 14px; font-family: inherit;
+  outline: none; transition: border-color .15s, box-shadow .15s;
+}
+select.input option { background: var(--pop); color: var(--text); }
+.input::placeholder { color: var(--muted); opacity: .7; }
+.input:hover { border-color: var(--text); }
+.input:focus { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.input.sm { padding: 7px 12px; font-size: 13px; border-radius: 10px; }
+textarea.input { resize: vertical; min-height: 84px; line-height: 1.5; }
+.input.error { border-color: var(--danger); box-shadow: 0 0 0 1px var(--danger); }
+.field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.field-label { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: .4px; }
+.field-error { color: var(--danger); font-size: 12px; }
+.field-row { display: flex; gap: 8px; align-items: stretch; }
+.field-row .input { flex: 1; min-width: 0; }
+
+/* Switch */
+.switch { position: relative; display: inline-block; width: 52px; height: 32px; flex: none; }
+.switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+.switch-track {
+  position: absolute; inset: 0; border-radius: 999px;
+  background: var(--surface-3); border: 2px solid var(--outline);
+  transition: background .2s, border-color .2s; cursor: pointer;
+}
+.switch-thumb {
+  position: absolute; top: 6px; left: 6px; width: 16px; height: 16px;
+  border-radius: 50%; background: var(--outline);
+  transition: all .2s ease;
+}
+.switch input:checked + .switch-track { background: var(--accent); border-color: var(--accent); }
+.switch input:checked + .switch-track .switch-thumb {
+  transform: none; left: 22px; top: 2px; width: 24px; height: 24px; background: var(--on-accent);
+}
+.switch input:focus-visible + .switch-track { outline: 2px solid var(--accent); outline-offset: 2px; }
+.switch input:disabled + .switch-track { opacity: .38; }
+
+/* ============================================================
+   MAIN / VIEWS
+   ============================================================ */
+main { flex: 1; min-height: 0; position: relative; }
+.view { height: 100%; }
+#view-home { overflow: hidden; }
+#view-trash, #view-settings { overflow-y: auto; }
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.empty-state {
+  height: 100%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  padding: 32px; gap: 6px;
+}
+.empty-icon {
+  width: 80px; height: 80px; border-radius: 28px;
+  background: var(--accent-soft); color: var(--on-soft);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.empty-state h2 { margin: 0; font-size: 22px; font-weight: 500; letter-spacing: 0; }
+.empty-state p { margin: 4px 0 20px; color: var(--muted); max-width: 440px; line-height: 1.6; font-size: 14px; }
+
+/* ============================================================
+   GROUPS STRIP
+   ============================================================ */
+.groups-strip {
+  display: flex;
+  gap: 16px;
+  height: 100%;
+  padding: 4px 24px 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.group-col {
+  flex: 0 0 372px;
+  width: 372px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--col);
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.group-head { padding: 20px 20px 12px; flex: none; }
+.group-head-top { display: flex; align-items: flex-start; gap: 8px; }
+.group-name {
+  margin: 0; font-size: 20px; font-weight: 500; letter-spacing: 0;
+  flex: 1; min-width: 0; overflow-wrap: anywhere; line-height: 1.35;
+}
+.group-desc {
+  margin: 6px 0 0; font-size: 13px; color: var(--muted);
+  line-height: 1.5; overflow-wrap: anywhere;
+}
+.group-desc.placeholder { font-style: italic; opacity: .7; }
+
+.group-tools { display: flex; align-items: center; gap: 8px; margin-top: 14px; }
+.group-tools .spacer { flex: 1; }
+
+.tool-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 32px; padding: 0 12px; border-radius: 8px;
+  border: 1px solid var(--outline); background: transparent;
+  color: var(--muted); font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: background .15s, color .15s; max-width: 140px;
+}
+.tool-btn:hover { background: var(--state-hover); color: var(--text); }
+.tool-btn .lbl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tool-btn.active { color: var(--on-soft); border-color: transparent; background: var(--accent-soft); }
+
+.group-head .btn.block { margin-top: 12px; }
+
+.group-body {
+  flex: 1; min-height: 0;
+  overflow-y: auto;
+  padding: 4px 12px 14px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.group-empty {
+  padding: 28px 12px; text-align: center; color: var(--muted);
+  font-size: 13px; line-height: 1.6;
+}
+
+/* ============================================================
+   ENTRIES — filled cards
+   ============================================================ */
+.entry {
+  background: var(--card);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: box-shadow .15s, background-color .15s;
+  overflow: hidden;
+  flex: none;
+  position: relative;
+}
+.entry:hover { box-shadow: var(--shadow); }
+.entry::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit;
+  background: var(--state-hover); opacity: 0; pointer-events: none; transition: opacity .15s;
+}
+.entry:hover::after { opacity: 1; }
+.entry:active::after { background: var(--state-press); opacity: 1; }
+.entry.is-done { opacity: .6; }
+.entry.is-done .entry-title { text-decoration: line-through; }
+
+.entry-thumb { width: 100%; height: 140px; background: var(--surface-2); overflow: hidden; }
+.entry-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.entry-main { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.entry-top { display: flex; align-items: flex-start; gap: 10px; }
+.entry-title {
+  flex: 1; min-width: 0; font-size: 15px; font-weight: 500;
+  line-height: 1.4; overflow-wrap: anywhere;
+}
+.entry-desc {
+  font-size: 13px; color: var(--muted); line-height: 1.5;
+  overflow-wrap: anywhere;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.entry-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+
+.done-check {
+  width: 20px; height: 20px; flex: none; margin-top: 1px;
+  border-radius: 50%; border: 2px solid var(--outline);
+  background: transparent; color: transparent;
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer; padding: 0; font-size: 11px; line-height: 1;
+  transition: .15s; position: relative; z-index: 1;
+}
+.done-check:hover { border-color: var(--accent); }
+.done-check.checked {
+  background: var(--success); border-color: var(--success); color: var(--on-success);
+}
+.done-check.checked svg { display: block; }
+
+.entry-more {
+  width: 28px; height: 28px; flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 0; background: transparent;
+  color: var(--muted); cursor: pointer; padding: 0;
+  position: relative; z-index: 1;
+}
+.entry-more:hover { background: var(--state-press); color: var(--text); }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 8px;
+  background: var(--accent-soft); color: var(--on-soft);
+  font-size: 12px; font-weight: 500; line-height: 1.5;
+  max-width: 100%;
+}
+.chip .chip-x {
+  border: 0; background: transparent; color: inherit; cursor: pointer;
+  padding: 0; margin-left: 2px; font-size: 14px; line-height: 1; opacity: .7;
+}
+.chip .chip-x:hover { opacity: 1; }
+.chip.sm { font-size: 11px; padding: 2px 8px; }
+.chip.plain { background: var(--surface-2); color: var(--muted); }
+.chip.voice { background: var(--surface-3); color: var(--muted); }
+.chip.trunc { max-width: 160px; overflow: hidden; }
+
+/* Countdown */
+.countdown { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+.cd-bar { height: 4px; border-radius: 999px; background: var(--surface-3); overflow: hidden; }
+.cd-fill { height: 100%; background: var(--accent); border-radius: 999px; transition: width .4s linear; }
+.countdown.overdue .cd-fill { background: var(--danger); }
+.cd-text { font-size: 11px; color: var(--muted); line-height: 1.4; }
+.countdown.overdue .cd-text { color: var(--danger); font-weight: 500; }
+
+/* ============================================================
+   MENUS (popovers)
+   ============================================================ */
+.popover {
+  position: fixed; z-index: 200;
+  background: var(--menu);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  padding: 8px;
+  min-width: 208px; max-width: 300px;
+  animation: pop .12s ease-out;
+}
+@keyframes pop { from { opacity: 0; transform: translateY(-4px); } }
+.popover-item {
+  display: flex; align-items: center; gap: 12px;
+  height: 44px; padding: 0 12px; border-radius: 12px;
+  font-size: 14px; cursor: pointer; color: var(--text);
+  border: 0; background: transparent; width: 100%; text-align: left;
+}
+.popover-item:hover { background: var(--state-hover); }
+.popover-item:active { background: var(--state-press); }
+.popover-item.active { color: var(--on-soft); font-weight: 500; background: var(--accent-soft); }
+.popover-item.danger { color: var(--danger); }
+.popover-item.danger:hover { background: var(--danger-soft); }
+.popover-sep { height: 1px; background: var(--border); margin: 6px 4px; }
+.popover-label {
+  font-size: 12px; font-weight: 500; letter-spacing: .5px;
+  color: var(--muted);
+  padding: 8px 12px 4px;
+}
+.check-mark { margin-left: auto; color: var(--accent); display: flex; }
+
+/* ============================================================
+   DIALOGS
+   ============================================================ */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 300;
+  background: var(--scrim);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0; transition: opacity .15s;
+}
+.modal-backdrop.show { opacity: 1; }
+.modal {
+  background: var(--pop);
+  border-radius: 28px;
+  box-shadow: var(--shadow-lg);
+  width: 100%; max-width: 480px;
+  max-height: 92vh;
+  display: flex; flex-direction: column;
+  transform: translateY(8px) scale(.99);
+  transition: transform .15s;
+  overflow: hidden;
+}
+.modal-backdrop.show .modal { transform: none; }
+.modal-wide { max-width: 780px; }
+.modal-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 22px 20px 8px 28px;
+  flex: none;
+}
+.modal-head h3 { margin: 0; font-size: 22px; font-weight: 400; flex: 1; letter-spacing: 0; }
+.modal-body { padding: 12px 28px 20px; overflow-y: auto; flex: 1; min-height: 0; }
+.modal-foot {
+  display: flex; gap: 8px; justify-content: flex-end;
+  padding: 12px 24px 24px;
+  flex: none;
+}
+.modal-foot:empty { display: none; }
+
+.modal-grid { display: grid; grid-template-columns: 260px 1fr; gap: 24px; }
+@media (max-width: 640px) { .modal-grid { grid-template-columns: 1fr; } }
+
+.toggle-list { display: flex; flex-direction: column; gap: 2px; }
+.toggle-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 12px; border-radius: 16px;
+}
+.toggle-row:hover { background: var(--state-hover); }
+.toggle-text { flex: 1; min-width: 0; }
+.toggle-name { font-size: 14px; font-weight: 500; }
+.toggle-hint { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* Dropzone */
+.dropzone {
+  border: 1px dashed var(--outline);
+  border-radius: 16px;
+  padding: 24px 14px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  transition: .15s;
+  background: transparent;
+}
+.dropzone:hover, .dropzone.drag { border-color: var(--accent); color: var(--on-soft); background: var(--accent-soft); }
+
+.img-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; margin-top: 12px; }
+.img-thumb {
+  position: relative; aspect-ratio: 1; border-radius: 12px; overflow: hidden;
+  background: var(--well);
+}
+.img-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.img-thumb .x {
+  position: absolute; top: 4px; right: 4px;
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 0; background: rgba(0,0,0,.6); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 14px; line-height: 1; padding: 0;
+}
+.img-thumb .x:hover { background: var(--danger); color: var(--on-danger); }
+
+/* Voice recorder */
+.voice-recorder {
+  border-radius: 16px;
+  padding: 16px; background: var(--well);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.rec-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.rec-dot {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--danger);
+  animation: blink 1.1s infinite;
+}
+@keyframes blink { 50% { opacity: .25; } }
+.rec-time { font-variant-numeric: tabular-nums; font-weight: 500; font-size: 14px; }
+.voice-recorder audio { width: 100%; height: 36px; }
+
+/* Tag picker */
+.tag-picker { display: flex; flex-direction: column; gap: 8px; }
+.tag-chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; min-height: 28px; }
+.tag-pop { width: 272px; }
+.tag-list { max-height: 200px; overflow-y: auto; display: flex; flex-direction: column; gap: 2px; }
+.tag-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; border-radius: 12px; font-size: 14px;
+}
+.tag-row:hover { background: var(--state-hover); }
+.tag-row input[type="checkbox"] { accent-color: var(--accent); width: 16px; height: 16px; cursor: pointer; }
+.tag-row-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mini-btn {
+  border: 0; background: transparent; color: var(--muted);
+  cursor: pointer; padding: 5px; border-radius: 50%; display: flex;
+}
+.mini-btn:hover { background: var(--state-press); color: var(--text); }
+.mini-btn.danger:hover { color: var(--danger); }
+.tag-create { display: flex; gap: 8px; padding: 10px 4px 2px; border-top: 1px solid var(--border); margin-top: 8px; }
+
+/* ============================================================
+   FULL-SCREEN-ish OVERLAY (entry viewer)
+   ============================================================ */
+.overlay {
+  position: fixed; inset: 0; z-index: 400;
+  background: var(--scrim);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0; transition: opacity .18s;
+}
+.overlay.show { opacity: 1; }
+.overlay-panel {
+  background: var(--pop);
+  border-radius: 28px;
+  width: 100%; max-width: 900px; max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  transform: scale(.98); transition: transform .18s;
+}
+.overlay.show .overlay-panel { transform: none; }
+.ov-head {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 22px 20px 14px 28px;
+  position: sticky; top: 0; background: var(--pop); z-index: 2;
+  border-radius: 28px 28px 0 0;
+}
+.ov-title { margin: 0; font-size: 24px; font-weight: 400; letter-spacing: 0; flex: 1; overflow-wrap: anywhere; line-height: 1.3; }
+.ov-body { padding: 8px 28px 32px; display: flex; flex-direction: column; gap: 20px; }
+.ov-desc { color: var(--muted); font-size: 14px; line-height: 1.7; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+.ov-carousel {
+  position: relative; border-radius: 20px; overflow: hidden;
+  background: var(--well);
+  display: flex; align-items: center; justify-content: center;
+  max-height: 440px;
+}
+.ov-carousel img { max-width: 100%; max-height: 440px; object-fit: contain; display: block; }
+.ov-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 0; background: rgba(0,0,0,.5); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: .15s;
+}
+.ov-nav:hover { background: rgba(0,0,0,.75); }
+.ov-nav.prev { left: 12px; }
+.ov-nav.next { right: 12px; }
+.ov-counter {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,.6); color: #fff;
+  padding: 3px 12px; border-radius: 999px; font-size: 12px; font-weight: 500;
+}
+
+.ov-section { display: flex; flex-direction: column; gap: 8px; }
+.ov-label { font-size: 12px; font-weight: 500; letter-spacing: .5px; color: var(--muted); }
+.ov-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.ov-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  align-self: flex-start; max-width: 100%;
+  padding: 10px 18px; border-radius: 999px;
+  background: var(--accent-soft); color: var(--on-soft);
+  font-size: 14px; font-weight: 500; text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: filter .15s;
+}
+.ov-link:hover { filter: brightness(.96); text-decoration: underline; }
+html[data-theme="dark"] .ov-link:hover { filter: brightness(1.15); }
+
+/* ============================================================
+   TRASH / SETTINGS LAYOUTS — open, wide, like Home
+   ============================================================ */
+.page { max-width: 1400px; margin: 0 auto; padding: 4px 24px 72px; }
+.page-head { display: flex; align-items: center; gap: 12px; margin: 0 0 24px; padding: 4px 4px 0; flex-wrap: wrap; }
+.page-head h1 { margin: 0; font-size: 32px; font-weight: 400; letter-spacing: 0; flex: 1; }
+
+.list-card {
+  background: var(--col); border-radius: 20px; padding: 20px 28px; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 20px;
+}
+.list-card .lc-main { flex: 1; min-width: 0; }
+.lc-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; overflow-wrap: anywhere; }
+.lc-desc { font-size: 13px; color: var(--muted); line-height: 1.5; overflow-wrap: anywhere; }
+.lc-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; font-size: 12px; color: var(--muted); align-items: center; }
+.lc-actions { display: flex; gap: 8px; flex: none; }
+.badge {
+  display: inline-flex; align-items: center; padding: 3px 10px;
+  border-radius: 8px; font-size: 11px; font-weight: 500;
+  letter-spacing: .4px;
+  background: var(--surface-3); color: var(--muted);
+}
+.badge.group { background: var(--accent-soft); color: var(--on-soft); }
+
+.settings-section {
+  background: var(--col); border-radius: 28px; padding: 28px 32px; margin-bottom: 16px;
+}
+.settings-section h2 {
+  margin: 0 0 4px; font-size: 18px; font-weight: 500; letter-spacing: 0;
+}
+.settings-section .hint { margin: 0 0 20px; font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+.segmented { display: inline-flex; border: 1px solid var(--outline); border-radius: 999px; overflow: hidden; }
+.segmented button {
+  border: 0; background: transparent; color: var(--text);
+  height: 40px; padding: 0 24px; cursor: pointer;
+  font-size: 14px; font-weight: 500; transition: background .15s;
+}
+.segmented button + button { border-left: 1px solid var(--outline); }
+.segmented button:hover { background: var(--state-hover); }
+.segmented button.active { background: var(--accent-soft); color: var(--on-soft); }
+
+.storage-bar {
+  height: 10px; border-radius: 999px; background: var(--surface-3);
+  display: flex; overflow: hidden; margin: 4px 0 18px;
+}
+.storage-bar .fill-active { background: var(--accent); }
+.storage-bar .fill-trash { background: var(--danger); opacity: .8; }
+.storage-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 12px; }
+.stat { background: var(--card); border-radius: 16px; padding: 14px 18px; }
+.stat-label { font-size: 12px; color: var(--muted); font-weight: 500; letter-spacing: .3px; }
+.stat-value { font-size: 20px; font-weight: 400; margin-top: 4px; letter-spacing: 0; }
+
+.breakdown { display: flex; flex-direction: column; gap: 12px; margin-top: 22px; }
+.bd-row { display: flex; align-items: center; gap: 12px; font-size: 13px; }
+.bd-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.bd-name { width: 130px; color: var(--muted); flex: none; }
+.bd-bar { flex: 1; height: 6px; background: var(--surface-3); border-radius: 999px; overflow: hidden; }
+.bd-bar div { height: 100%; border-radius: 999px; }
+.bd-val { width: 84px; text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); flex: none; }
+
+.dm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 12px; }
+
+/* ============================================================
+   SNACKBAR (toasts)
+   ============================================================ */
+#toast-root {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  z-index: 600; display: flex; flex-direction: column; gap: 8px; align-items: center;
+  pointer-events: none;
+}
+.toast {
+  background: #303030; color: #f2f2f2;
+  padding: 14px 20px; border-radius: 12px;
+  font-size: 14px; font-weight: 400;
+  box-shadow: var(--shadow-lg);
+  animation: toastIn .2s ease-out;
+  max-width: 90vw;
+}
+html[data-theme="dark"] .toast { background: #e3e3e3; color: #1f1f1f; }
+.toast.error { background: var(--danger); color: var(--on-danger); }
+.toast.out { opacity: 0; transition: opacity .3s; }
+@keyframes toastIn { from { opacity: 0; transform: translateY(10px); } }
+
+/* ============================================================
+   SMALL SCREENS
+   ============================================================ */
+@media (max-width: 720px) {
+  .navbar { gap: 8px; padding: 0 12px; height: 60px; }
+  .brand { font-size: 18px; }
+  .nav-tab { padding: 0 12px; }
+  .groups-strip { padding: 4px 12px 16px; gap: 12px; }
+  .group-col { flex-basis: 88vw; width: 88vw; }
+  .page { padding: 4px 12px 56px; }
+  .page-head h1 { font-size: 26px; }
+  .list-card { padding: 16px; flex-wrap: wrap; }
+  .settings-section { padding: 20px; }
+  .modal-body { padding: 12px 20px 16px; }
+  .modal-head { padding-left: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div id="splash" class="splash">
+  <div class="splash-spinner"></div>
+  <p>Loading your data…</p>
+</div>
+
+<header class="navbar">
+  <div class="brand" id="brand" role="button" tabindex="0" title="Reload Listly" aria-label="Listly — reload app">
+    <span class="brand-dot"></span><span>Listly</span>
+  </div>
+  <nav class="nav-tabs" id="nav-tabs">
+    <button class="nav-tab active" data-view="home">Home</button>
+    <button class="nav-tab" data-view="trash">Trash</button>
+    <button class="nav-tab" data-view="settings">Settings</button>
+  </nav>
+  <div class="nav-right">
+    <button class="btn primary" id="new-group-btn"></button>
+  </div>
+</header>
+
+<main>
+  <section id="view-home" class="view"></section>
+  <section id="view-trash" class="view hidden" data-csb="y"></section>
+  <section id="view-settings" class="view hidden" data-csb="y"></section>
+</main>
+
+<div id="modal-root"></div>
+<div id="popover-root"></div>
+<div id="overlay-root"></div>
+<div id="toast-root"></div>
+
+<script>
+/* ============================================================
+   LISTLY — with IndexedDB persistence
+   ------------------------------------------------------------
+   All app data lives in memory in the `State` object. Changes
+   are flushed to IndexedDB asynchronously via a dirty-tracking
+   queue (`dirty` + `flush()`), so the UI never blocks on I/O.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Utilities
+   ------------------------------------------------------------ */
+const uid = () => Math.random().toString(36).slice(2, 9) + Date.now().toString(36).slice(-4);
+
+function h(tag, attrs, ...children) {
+  const el = document.createElement(tag);
+  if (attrs) {
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v === null || v === undefined || v === false) continue;
+      if (k === 'class') el.className = v;
+      else if (k === 'style' && typeof v === 'object') Object.assign(el.style, v);
+      else if (k === 'dataset') Object.assign(el.dataset, v);
+      else if (k.startsWith('on') && typeof v === 'function') el.addEventListener(k.slice(2).toLowerCase(), v);
+      else if (v === true) el.setAttribute(k, '');
+      else el.setAttribute(k, v);
+    }
+  }
+  for (const c of children.flat(Infinity)) {
+    if (c === null || c === undefined || c === false || c === true) continue;
+    el.append(c.nodeType ? c : document.createTextNode(String(c)));
+  }
+  return el;
+}
+
+const ICON_PATHS = {
+  edit: '<path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
+  trash: '<path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',
+  more: '<circle cx="12" cy="5" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="19" r="1.6" fill="currentColor"/>',
+  close: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+  plus: '<path d="M12 5v14"/><path d="M5 12h14"/>',
+  chevron: '<path d="m6 9 6 6 6-6"/>',
+  mic: '<path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/>',
+  image: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>',
+  check: '<path d="M20 6 9 17l-5-5"/>',
+  filter: '<path d="M3 5h18l-7 8v6l-4 2v-8z"/>',
+  sort: '<path d="M3 6h18"/><path d="M6 12h12"/><path d="M10 18h4"/>',
+  restore: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>',
+  left: '<path d="m15 18-6-6 6-6"/>',
+  right: '<path d="m9 18 6-6-6-6"/>',
+  download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/>',
+  upload: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/>',
+  refresh: '<path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/>',
+  pause: '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>',
+  play: '<path d="M7 4.5v15l12-7.5z" fill="currentColor" stroke="none"/>',
+  list: '<path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/>',
+  alert: '<circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 17h.01"/>',
+  link: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+  pin: '<path d="M12 21s-7-5.7-7-11a7 7 0 1 1 14 0c0 5.3-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>'
+};
+
+function iconEl(name, size = 16) {
+  const span = h('span', { class: 'ico' });
+  span.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON_PATHS[name] || ''}</svg>`;
+  return span;
+}
+
+function fmtDateTime(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  return d.toLocaleString(undefined, { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+}
+function fmtDate(iso) {
+  if (!iso) return '—';
+  return new Date(iso).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+}
+function toLocalInput(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  const p = n => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+function fmtBytes(n) {
+  if (n < 1024) return n + ' B';
+  if (n < 1024 * 1024) return (n / 1024).toFixed(1) + ' KB';
+  if (n < 1024 * 1024 * 1024) return (n / 1024 / 1024).toFixed(2) + ' MB';
+  return (n / 1024 / 1024 / 1024).toFixed(2) + ' GB';
+}
+function byteSize(str) { return new Blob([str]).size; }
+function normalizeUrl(raw) {
+  if (!raw) return '';
+  return /^[a-z][a-z0-9+.-]*:\/\//i.test(raw) ? raw : 'https://' + raw;
+}
+function truncate(str, n) {
+  if (!str) return '';
+  return str.length > n ? str.slice(0, n - 1) + '…' : str;
+}
+
+function countdownText(dueIso) {
+  const due = new Date(dueIso).getTime();
+  const now = Date.now();
+  let diff = due - now;
+  const overdue = diff < 0;
+  diff = Math.abs(diff);
+  const d = Math.floor(diff / 86400000);
+  const hh = Math.floor((diff % 86400000) / 3600000);
+  const mm = Math.floor((diff % 3600000) / 60000);
+  const ss = Math.floor((diff % 60000) / 1000);
+  const parts = [];
+  if (d) parts.push(d + 'd');
+  if (d || hh) parts.push(hh + 'h');
+  parts.push(mm + 'm');
+  if (!d) parts.push(ss + 's');
+  return (overdue ? 'Overdue by ' : '') + parts.join(' ') + (overdue ? '' : ' left');
+}
+
+/* ------------------------------------------------------------
+   Toast
+   ------------------------------------------------------------ */
+function toast(msg, type) {
+  const root = document.getElementById('toast-root');
+  const el = h('div', { class: 'toast' + (type ? ' ' + type : '') }, msg);
+  root.append(el);
+  setTimeout(() => { el.classList.add('out'); setTimeout(() => el.remove(), 320); }, 2500);
+}
+
+/* ============================================================
+   CUSTOM SCROLLBARS
+   ------------------------------------------------------------
+   Native scrollbars are hidden on any element carrying a
+   `data-csb="x|y"` attribute (or on textareas). A floating
+   track + thumb is rendered in <body> and kept in sync with
+   the element's geometry via getBoundingClientRect().
+   ============================================================ */
+const CSB = new Map();
+let csbRaf = 0;
+let refreshRaf = 0;
+
+function scheduleScrollbars() {
+  if (csbRaf) return;
+  csbRaf = requestAnimationFrame(() => {
+    csbRaf = 0;
+    for (const [el, st] of CSB) {
+      if (!document.body.contains(el)) { st.destroy(); continue; }
+      st.update();
+    }
+  });
+}
+
+function refreshScrollbars() {
+  document.querySelectorAll('[data-csb], textarea.input').forEach(el => {
+    attachScrollbar(el, el.dataset.csb || 'y');
+  });
+  scheduleScrollbars();
+}
+
+function scheduleRefresh() {
+  if (refreshRaf) return;
+  refreshRaf = requestAnimationFrame(() => {
+    refreshRaf = 0;
+    refreshScrollbars();
+  });
+}
+
+function attachScrollbar(el, axis) {
+  const existing = CSB.get(el);
+  if (existing) { existing.update(); return existing; }
+
+  const horizontal = axis === 'x';
+  const track = document.createElement('div');
+  track.className = 'csb csb-' + axis;
+  const thumb = document.createElement('div');
+  thumb.className = 'csb-thumb';
+  track.append(thumb);
+  document.body.append(track);
+
+  let hovering = false;
+  let dragging = false;
+  let hideTimer = null;
+
+  const st = {
+    el, axis, track, thumb,
+
+    update() {
+      const r = el.getBoundingClientRect();
+      const viewport = horizontal ? el.clientWidth : el.clientHeight;
+      const content = horizontal ? el.scrollWidth : el.scrollHeight;
+
+      if (r.width < 2 || r.height < 2 || content <= viewport + 1) {
+        track.classList.remove('visible');
+        track.style.display = 'none';
+        return;
+      }
+      track.style.display = 'block';
+
+      // Keep the scrollbar above the layer its element belongs to
+      const layered = el.closest('.overlay, .modal-backdrop, .popover');
+      track.style.zIndex = layered ? '500' : '150';
+
+      if (horizontal) {
+        track.style.left = r.left + 'px';
+        track.style.top = (r.bottom - 12) + 'px';
+        track.style.width = r.width + 'px';
+        track.style.height = '12px';
+      } else {
+        track.style.left = (r.right - 12) + 'px';
+        track.style.top = r.top + 'px';
+        track.style.width = '12px';
+        track.style.height = r.height + 'px';
+      }
+
+      const trackLen = horizontal ? r.width : r.height;
+      const ratio = viewport / content;
+      const thumbLen = Math.max(30, Math.min(trackLen, Math.round(trackLen * ratio)));
+      const maxTravel = trackLen - thumbLen;
+      const scrollMax = content - viewport;
+      const scrollPos = horizontal ? el.scrollLeft : el.scrollTop;
+      const pos = scrollMax > 0 ? (scrollPos / scrollMax) * maxTravel : 0;
+
+      if (horizontal) {
+        thumb.style.width = thumbLen + 'px';
+        thumb.style.height = '';
+        thumb.style.transform = `translateX(${pos}px)`;
+      } else {
+        thumb.style.height = thumbLen + 'px';
+        thumb.style.width = '';
+        thumb.style.transform = `translateY(${pos}px)`;
+      }
+    },
+
+    show() {
+      if (track.style.display === 'none') return;
+      track.classList.add('visible');
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => {
+        if (!dragging && !hovering) track.classList.remove('visible');
+      }, 1000);
+    },
+
+    destroy() {
+      clearTimeout(hideTimer);
+      if (st.ro) { try { st.ro.disconnect(); } catch (e) {} }
+      track.remove();
+      CSB.delete(el);
+    }
+  };
+
+  el.addEventListener('mouseenter', () => { hovering = true; st.show(); });
+  el.addEventListener('mouseleave', () => {
+    hovering = false;
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => { if (!dragging) track.classList.remove('visible'); }, 420);
+  });
+  el.addEventListener('scroll', () => { scheduleScrollbars(); st.show(); }, { passive: true });
+
+  if (el.tagName === 'TEXTAREA') {
+    el.addEventListener('input', scheduleScrollbars, { passive: true });
+  }
+
+  /* ---- Drag the thumb ---- */
+  thumb.addEventListener('pointerdown', ev => {
+    ev.preventDefault();
+    ev.stopPropagation();
+    dragging = true;
+    track.classList.add('dragging');
+    try { thumb.setPointerCapture(ev.pointerId); } catch (e) {}
+
+    const startPos = horizontal ? ev.clientX : ev.clientY;
+    const startScroll = horizontal ? el.scrollLeft : el.scrollTop;
+    const viewport = horizontal ? el.clientWidth : el.clientHeight;
+    const content = horizontal ? el.scrollWidth : el.scrollHeight;
+    const trackLen = horizontal ? track.offsetWidth : track.offsetHeight;
+    const thumbLen = horizontal ? thumb.offsetWidth : thumb.offsetHeight;
+    const maxTravel = trackLen - thumbLen;
+    const scrollMax = content - viewport;
+
+    const onMove = e2 => {
+      const delta = (horizontal ? e2.clientX : e2.clientY) - startPos;
+      const ratio = maxTravel > 0 ? delta / maxTravel : 0;
+      const target = Math.max(0, Math.min(scrollMax, startScroll + ratio * scrollMax));
+      if (horizontal) el.scrollLeft = target; else el.scrollTop = target;
+    };
+    const onUp = () => {
+      dragging = false;
+      track.classList.remove('dragging');
+      thumb.removeEventListener('pointermove', onMove);
+      thumb.removeEventListener('pointerup', onUp);
+      thumb.removeEventListener('pointercancel', onUp);
+      st.show();
+    };
+    thumb.addEventListener('pointermove', onMove);
+    thumb.addEventListener('pointerup', onUp);
+    thumb.addEventListener('pointercancel', onUp);
+  });
+
+  /* ---- Click the track to jump ---- */
+  track.addEventListener('pointerdown', ev => {
+    if (ev.target === thumb) return;
+    ev.preventDefault();
+    const rect = track.getBoundingClientRect();
+    const viewport = horizontal ? el.clientWidth : el.clientHeight;
+    const content = horizontal ? el.scrollWidth : el.scrollHeight;
+    const clickPos = horizontal ? ev.clientX - rect.left : ev.clientY - rect.top;
+    const trackLen = horizontal ? rect.width : rect.height;
+    const target = (clickPos / trackLen) * content - viewport / 2;
+    const clamped = Math.max(0, Math.min(content - viewport, target));
+    if (horizontal) el.scrollTo({ left: clamped, behavior: 'smooth' });
+    else el.scrollTo({ top: clamped, behavior: 'smooth' });
+    st.show();
+  });
+
+  /* ---- Keep geometry fresh on size changes ---- */
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(() => scheduleScrollbars());
+    ro.observe(el);
+    st.ro = ro;
+  }
+
+  CSB.set(el, st);
+  st.update();
+  return st;
+}
+
+window.addEventListener('resize', scheduleScrollbars);
+window.addEventListener('scroll', scheduleScrollbars, true);
+
+/* Auto-detect DOM changes so newly-created scrollers get a bar */
+if (window.MutationObserver) {
+  const mo = new MutationObserver(muts => {
+    for (const m of muts) {
+      if (m.type !== 'childList') continue;
+      const nodes = [...m.addedNodes, ...m.removedNodes];
+      if (!nodes.length) continue;
+      if (nodes.every(n => n.nodeType === 1 && n.classList && n.classList.contains('csb'))) continue;
+      scheduleRefresh();
+      return;
+    }
+  });
+  mo.observe(document.body, { childList: true, subtree: true });
+}
+
+/* ============================================================
+   IndexedDB layer
+   ------------------------------------------------------------
+   Database: "listing-app"  (name kept for backwards compat)
+   Stores:
+     - groups   (keyPath: id)     one record per group (nested entries/tags)
+     - trash    (keyPath: id)     one record per trashed item
+     - settings (keyPath: key)    app preferences
+   ============================================================ */
+const DB_NAME = 'listing-app';
+const DB_VERSION = 1;
+const STORE_GROUPS = 'groups';
+const STORE_TRASH = 'trash';
+const STORE_SETTINGS = 'settings';
+
+const DB = {
+  _db: null,
+  _openPromise: null,
+  _supported: typeof indexedDB !== 'undefined',
+
+  open() {
+    if (this._db) return Promise.resolve(this._db);
+    if (this._openPromise) return this._openPromise;
+    if (!this._supported) return Promise.reject(new Error('IndexedDB is not supported'));
+
+    this._openPromise = new Promise((resolve, reject) => {
+      let req;
+      try {
+        req = indexedDB.open(DB_NAME, DB_VERSION);
+      } catch (err) {
+        reject(err);
+        return;
+      }
+
+      req.onupgradeneeded = () => {
+        const db = req.result;
+        if (!db.objectStoreNames.contains(STORE_GROUPS)) {
+          db.createObjectStore(STORE_GROUPS, { keyPath: 'id' });
+        }
+        if (!db.objectStoreNames.contains(STORE_TRASH)) {
+          db.createObjectStore(STORE_TRASH, { keyPath: 'id' });
+        }
+        if (!db.objectStoreNames.contains(STORE_SETTINGS)) {
+          db.createObjectStore(STORE_SETTINGS, { keyPath: 'key' });
+        }
+      };
+
+      req.onsuccess = () => {
+        this._db = req.result;
+        this._db.onversionchange = () => {
+          try { this._db.close(); } catch (e) {}
+          this._db = null;
+          this._openPromise = null;
+        };
+        resolve(this._db);
+      };
+
+      req.onerror = () => {
+        this._openPromise = null;
+        reject(req.error || new Error('Failed to open IndexedDB'));
+      };
+
+      req.onblocked = () => {
+        console.warn('[DB] Open blocked — another tab may be holding an older version.');
+      };
+    });
+
+    return this._openPromise;
+  },
+
+  _readAll(store) {
+    return this.open().then(db => new Promise((resolve, reject) => {
+      const tx = db.transaction(store, 'readonly');
+      const req = tx.objectStore(store).getAll();
+      req.onsuccess = () => resolve(req.result || []);
+      req.onerror = () => reject(req.error);
+    }));
+  },
+
+  getAllGroups() { return this._readAll(STORE_GROUPS); },
+  getAllTrash() { return this._readAll(STORE_TRASH); },
+
+  getSetting(key) {
+    return this.open().then(db => new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE_SETTINGS, 'readonly');
+      const req = tx.objectStore(STORE_SETTINGS).get(key);
+      req.onsuccess = () => resolve(req.result ? req.result.value : undefined);
+      req.onerror = () => reject(req.error);
+    }));
+  },
+
+  putSetting(key, value) {
+    return this.open().then(db => new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE_SETTINGS, 'readwrite');
+      tx.objectStore(STORE_SETTINGS).put({ key, value });
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    }));
+  },
+
+  /* Bulk write used by flush() */
+  bulkWrite({ putGroups, deleteGroups, putTrash, deleteTrash, clearTrash, putSettings }) {
+    return this.open().then(db => new Promise((resolve, reject) => {
+      const tx = db.transaction([STORE_GROUPS, STORE_TRASH, STORE_SETTINGS], 'readwrite');
+      const gs = tx.objectStore(STORE_GROUPS);
+      const ts = tx.objectStore(STORE_TRASH);
+      const ss = tx.objectStore(STORE_SETTINGS);
+
+      if (clearTrash) ts.clear();
+      if (putGroups) for (const g of putGroups) gs.put(g);
+      if (deleteGroups) for (const id of deleteGroups) gs.delete(id);
+      if (putTrash) for (const t of putTrash) ts.put(t);
+      if (deleteTrash) for (const id of deleteTrash) ts.delete(id);
+      if (putSettings) for (const s of putSettings) ss.put(s);
+
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error || new Error('Bulk write failed'));
+      tx.onabort = () => reject(tx.error || new Error('Bulk write aborted'));
+    }));
+  },
+
+  /* Full rewrite — used for "sync everything" scenarios */
+  fullSync(groups, trash, settings) {
+    return this.open().then(db => new Promise((resolve, reject) => {
+      const tx = db.transaction([STORE_GROUPS, STORE_TRASH, STORE_SETTINGS], 'readwrite');
+      const gs = tx.objectStore(STORE_GROUPS);
+      const ts = tx.objectStore(STORE_TRASH);
+      const ss = tx.objectStore(STORE_SETTINGS);
+
+      gs.clear();
+      ts.clear();
+      for (const g of groups) gs.put(g);
+      for (const t of trash) ts.put(t);
+      ss.put({ key: 'theme', value: settings.theme });
+
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+      tx.onabort = () => reject(tx.error);
+    }));
+  },
+
+  clearAll() {
+    return this.open().then(db => new Promise((resolve, reject) => {
+      const tx = db.transaction([STORE_GROUPS, STORE_TRASH, STORE_SETTINGS], 'readwrite');
+      tx.objectStore(STORE_GROUPS).clear();
+      tx.objectStore(STORE_TRASH).clear();
+      tx.objectStore(STORE_SETTINGS).clear();
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    }));
+  }
+};
+
+/* ============================================================
+   Dirty tracking + flush queue
+   ============================================================ */
+const dirty = {
+  groups: new Set(),
+  trash: new Set(),
+  deletedGroups: new Set(),
+  deletedTrash: new Set(),
+  trashCleared: false,
+  settings: false,
+  fullSync: false
+};
+
+let saveTimer = null;
+let flushInProgress = false;
+let flushPending = false;
+
+function touchGroup(id) { if (id) dirty.groups.add(id); }
+function touchTrash(id) { if (id) dirty.trash.add(id); }
+function touchSettings() { dirty.settings = true; }
+function markGroupDeleted(id) { if (id) { dirty.deletedGroups.add(id); dirty.groups.delete(id); } }
+function markTrashDeleted(id) { if (id) { dirty.deletedTrash.add(id); dirty.trash.delete(id); } }
+function markTrashCleared() { dirty.trashCleared = true; dirty.trash.clear(); dirty.deletedTrash.clear(); }
+function markFullSync() { dirty.fullSync = true; }
+
+function hasPendingChanges() {
+  return dirty.groups.size > 0 || dirty.trash.size > 0 ||
+         dirty.deletedGroups.size > 0 || dirty.deletedTrash.size > 0 ||
+         dirty.trashCleared || dirty.settings || dirty.fullSync;
+}
+
+function save() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(flush, 180);
+}
+
+async function flush() {
+  if (!hasPendingChanges()) return;
+  if (flushInProgress) { flushPending = true; return; }
+  if (!DB._supported) {
+    dirty.groups.clear(); dirty.trash.clear();
+    dirty.deletedGroups.clear(); dirty.deletedTrash.clear();
+    dirty.trashCleared = false; dirty.settings = false; dirty.fullSync = false;
+    return;
+  }
+
+  flushInProgress = true;
+  const snap = {
+    groups: new Set(dirty.groups),
+    trash: new Set(dirty.trash),
+    deletedGroups: new Set(dirty.deletedGroups),
+    deletedTrash: new Set(dirty.deletedTrash),
+    trashCleared: dirty.trashCleared,
+    settings: dirty.settings,
+    fullSync: dirty.fullSync
+  };
+  dirty.groups.clear();
+  dirty.trash.clear();
+  dirty.deletedGroups.clear();
+  dirty.deletedTrash.clear();
+  dirty.trashCleared = false;
+  dirty.settings = false;
+  dirty.fullSync = false;
+
+  try {
+    if (snap.fullSync) {
+      await DB.fullSync(State.groups, State.trash, State.settings);
+    } else {
+      const payload = {
+        putGroups: [],
+        deleteGroups: [...snap.deletedGroups],
+        putTrash: [],
+        deleteTrash: [...snap.deletedTrash],
+        clearTrash: snap.trashCleared,
+        putSettings: snap.settings ? [{ key: 'theme', value: State.settings.theme }] : null
+      };
+      for (const id of snap.groups) {
+        const g = State.groups.find(x => x.id === id);
+        if (g) payload.putGroups.push(g);
+      }
+      for (const id of snap.trash) {
+        const t = State.trash.find(x => x.id === id);
+        if (t) payload.putTrash.push(t);
+      }
+      await DB.bulkWrite(payload);
+    }
+  } catch (err) {
+    console.error('[DB] Flush failed, will retry:', err);
+    snap.groups.forEach(id => dirty.groups.add(id));
+    snap.trash.forEach(id => dirty.trash.add(id));
+    snap.deletedGroups.forEach(id => dirty.deletedGroups.add(id));
+    snap.deletedTrash.forEach(id => dirty.deletedTrash.add(id));
+    if (snap.trashCleared) dirty.trashCleared = true;
+    if (snap.settings) dirty.settings = true;
+    if (snap.fullSync) dirty.fullSync = true;
+  } finally {
+    flushInProgress = false;
+    if (flushPending) {
+      flushPending = false;
+      flush();
+    }
+  }
+}
+
+/* Flush opportunistically when tab is hidden / unloaded */
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') flush();
+});
+window.addEventListener('pagehide', () => { flush(); });
+
+/* ============================================================
+   State
+   ============================================================ */
+const State = {
+  groups: [],
+  trash: [],
+  settings: { theme: 'device' }
+};
+
+const ui = {};
+let currentView = 'home';
+
+function getUI(groupId) {
+  if (!ui[groupId]) ui[groupId] = { filter: 'all', sort: 'newest' };
+  return ui[groupId];
+}
+function getGroup(id) { return State.groups.find(g => g.id === id); }
+
+/* ============================================================
+   Theme
+   ============================================================ */
+const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+function applyTheme() {
+  const t = State.settings.theme;
+  const resolved = t === 'device' ? (darkQuery.matches ? 'dark' : 'light') : t;
+  document.documentElement.dataset.theme = resolved;
+}
+darkQuery.addEventListener('change', () => { if (State.settings.theme === 'device') applyTheme(); });
+
+/* ============================================================
+   Popovers
+   ============================================================ */
+let activePopover = null;
+
+function closePopover() {
+  if (!activePopover) return;
+  activePopover.remove();
+  activePopover = null;
+  document.removeEventListener('mousedown', onDocMouseDown, true);
+  scheduleScrollbars();
+}
+function onDocMouseDown(e) {
+  if (!activePopover) return;
+  if (activePopover.contains(e.target)) return;
+  if (activePopover._anchor && activePopover._anchor.contains(e.target)) return;
+  closePopover();
+}
+
+function openPopover(anchor, content) {
+  if (activePopover && activePopover._anchor === anchor) { closePopover(); return null; }
+  closePopover();
+
+  const pop = h('div', { class: 'popover' }, content);
+  pop.style.visibility = 'hidden';
+  document.getElementById('popover-root').append(pop);
+
+  const r = anchor.getBoundingClientRect();
+  const pw = pop.offsetWidth, ph = pop.offsetHeight;
+  let left = r.left;
+  let top = r.bottom + 6;
+  if (left + pw > window.innerWidth - 10) left = Math.max(10, window.innerWidth - pw - 10);
+  if (left < 10) left = 10;
+  if (top + ph > window.innerHeight - 10) top = Math.max(10, r.top - ph - 6);
+  pop.style.left = left + 'px';
+  pop.style.top = top + 'px';
+  pop.style.visibility = 'visible';
+  pop._anchor = anchor;
+
+  activePopover = pop;
+  setTimeout(() => document.addEventListener('mousedown', onDocMouseDown, true), 0);
+  scheduleRefresh();
+  return pop;
+}
+
+/* ============================================================
+   Modals
+   ============================================================ */
+let modalStack = [];
+
+function openModal({ title, body, actions = [], wide = false }) {
+  const backdrop = h('div', { class: 'modal-backdrop' });
+  const modal = h('div', { class: 'modal' + (wide ? ' modal-wide' : '') });
+  const closeBtn = h('button', { class: 'icon-btn', title: 'Close', type: 'button' }, iconEl('close'));
+  const head = h('div', { class: 'modal-head' }, h('h3', {}, title), closeBtn);
+  const bodyEl = h('div', { class: 'modal-body', 'data-csb': 'y' }, body);
+  const foot = h('div', { class: 'modal-foot' }, actions);
+  modal.append(head, bodyEl, foot);
+  backdrop.append(modal);
+  document.getElementById('modal-root').append(backdrop);
+  requestAnimationFrame(() => backdrop.classList.add('show'));
+
+  const instance = {
+    bodyEl,
+    close() {
+      bodyEl.querySelectorAll('.voice-recorder').forEach(el => el._cleanup && el._cleanup());
+      backdrop.classList.remove('show');
+      setTimeout(() => { backdrop.remove(); scheduleScrollbars(); }, 160);
+      modalStack = modalStack.filter(m => m !== instance);
+    }
+  };
+
+  closeBtn.addEventListener('click', instance.close);
+  backdrop.addEventListener('mousedown', e => { if (e.target === backdrop) instance.close(); });
+  modalStack.push(instance);
+
+  scheduleRefresh();
+  setTimeout(scheduleScrollbars, 180);
+
+  return instance;
+}
+
+function confirmDialog({ title, message, confirmText = 'Confirm', danger = false, onConfirm }) {
+  const body = h('div', {}, h('p', { style: { margin: '0', lineHeight: '1.65', fontSize: '13.5px', color: 'var(--muted)' } }, message));
+  const cancel = h('button', { class: 'btn', type: 'button' }, 'Cancel');
+  const ok = h('button', { class: 'btn ' + (danger ? 'danger-solid' : 'primary'), type: 'button' }, confirmText);
+  const m = openModal({ title, body, actions: [cancel, ok] });
+  cancel.addEventListener('click', m.close);
+  ok.addEventListener('click', () => { m.close(); onConfirm(); });
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (modalStack.length) { modalStack[modalStack.length - 1].close(); return; }
+    if (document.querySelector('.overlay')) { closeOverlay(); return; }
+    closePopover();
+  }
+});
+
+/* ============================================================
+   RENDER — APP SHELL
+   ============================================================ */
+function renderApp() {
+  document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+  const view = document.getElementById('view-' + currentView);
+  view.classList.remove('hidden');
+  view.replaceChildren();
+
+  if (currentView === 'home') renderHome(view);
+  else if (currentView === 'trash') renderTrash(view);
+  else renderSettings(view);
+
+  document.querySelectorAll('.nav-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.view === currentView);
+  });
+
+  scheduleRefresh();
+}
+
+/* ============================================================
+   HOME
+   ============================================================ */
+function renderHome(container) {
+  if (State.groups.length === 0) {
+    container.append(
+      h('div', { class: 'empty-state' },
+        h('div', { class: 'empty-icon' }, iconEl('list', 28)),
+        h('h2', {}, 'Nothing here yet'),
+        h('p', {}, 'Create a group to get started. Each group holds its own entries, and you decide what every entry can contain — images, voice notes, tags, links, locations, a done tick, a countdown, and more.'),
+        h('button', { class: 'btn primary', type: 'button', onclick: () => openGroupModal(null) },
+          iconEl('plus', 15), 'New Group')
+      )
+    );
+    return;
+  }
+
+  const strip = h('div', { class: 'groups-strip', 'data-csb': 'x' });
+  State.groups.forEach(g => strip.append(renderGroupColumn(g)));
+  container.append(strip);
+}
+
+/* ------------------------------------------------------------
+   Group column
+   ------------------------------------------------------------ */
+function renderGroupColumn(group) {
+  const col = h('div', { class: 'group-col', 'data-group': group.id });
+
+  const head = h('div', { class: 'group-head' });
+
+  head.append(
+    h('div', { class: 'group-head-top' },
+      h('h2', { class: 'group-name' }, group.name)
+    ),
+    group.description
+      ? h('p', { class: 'group-desc' }, group.description)
+      : h('p', { class: 'group-desc placeholder' }, 'No description')
+  );
+
+  const u = getUI(group.id);
+  const activeTag = group.tags.find(t => t.id === u.filter);
+  const filterBtn = h('button', { class: 'tool-btn' + (u.filter !== 'all' ? ' active' : ''), type: 'button', title: 'Filter by tag' },
+    iconEl('filter', 13),
+    h('span', { class: 'lbl' }, u.filter === 'all' ? 'All' : (activeTag ? activeTag.name : 'All')),
+    iconEl('chevron', 12)
+  );
+  filterBtn.addEventListener('click', () => openFilterPopover(filterBtn, group));
+
+  const SORT_LABELS = {
+    'newest': 'Newest first',
+    'oldest': 'Oldest first',
+    'name-asc': 'Name (A–Z)',
+    'name-desc': 'Name (Z–A)',
+    'updated': 'Recently updated'
+  };
+  const sortBtn = h('button', { class: 'tool-btn', type: 'button', title: 'Sort entries' },
+    iconEl('sort', 13),
+    h('span', { class: 'lbl' }, SORT_LABELS[u.sort]),
+    iconEl('chevron', 12)
+  );
+  sortBtn.addEventListener('click', () => openSortPopover(sortBtn, group));
+
+  const editBtn = h('button', { class: 'icon-btn', type: 'button', title: 'Edit group' }, iconEl('edit', 15));
+  editBtn.addEventListener('click', () => openGroupModal(group));
+
+  const delBtn = h('button', { class: 'icon-btn danger', type: 'button', title: 'Delete group' }, iconEl('trash', 15));
+  delBtn.addEventListener('click', () => confirmDeleteGroup(group));
+
+  const infoBtn = h('button', { class: 'icon-btn', type: 'button', title: 'Group info' }, iconEl('info', 15));
+  infoBtn.addEventListener('click', () => openGroupInfo(group));
+
+  head.append(
+    h('div', { class: 'group-tools' },
+      filterBtn,
+      sortBtn,
+      h('div', { class: 'spacer' }),
+      editBtn, delBtn, infoBtn
+    )
+  );
+
+  const addEntryBtn = h('button', { class: 'btn primary block', type: 'button' },
+    iconEl('plus', 15), 'Add Entry');
+  addEntryBtn.addEventListener('click', () => openEntryModal(group, null));
+  head.append(addEntryBtn);
+
+  col.append(head, renderGroupBody(group));
+  return col;
+}
+
+function renderGroupBody(group) {
+  const body = h('div', { class: 'group-body', 'data-group-body': group.id, 'data-csb': 'y' });
+  const u = getUI(group.id);
+
+  let entries = group.entries.slice();
+  if (u.filter !== 'all') entries = entries.filter(e => (e.tags || []).includes(u.filter));
+  entries = sortEntries(entries, u.sort);
+
+  if (entries.length === 0) {
+    body.append(h('div', { class: 'group-empty' },
+      group.entries.length
+        ? 'No entries match this filter.'
+        : 'No entries yet. Press “Add Entry” to create one.'
+    ));
+  } else {
+    entries.forEach(e => body.append(renderEntry(group, e)));
+  }
+  return body;
+}
+
+function sortEntries(list, sort) {
+  const arr = list.slice();
+  switch (sort) {
+    case 'newest': arr.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); break;
+    case 'oldest': arr.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)); break;
+    case 'name-asc': arr.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })); break;
+    case 'name-desc': arr.sort((a, b) => b.name.localeCompare(a.name, undefined, { sensitivity: 'base' })); break;
+    case 'updated': arr.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)); break;
+  }
+  return arr;
+}
+
+function refreshGroupBody(groupId) {
+  const group = getGroup(groupId);
+  if (!group) return;
+  const old = document.querySelector(`[data-group-body="${groupId}"]`);
+  if (old) old.replaceWith(renderGroupBody(group));
+  else renderApp();
+  scheduleRefresh();
+}
+
+/* ============================================================
+   FILTER / SORT POPOVERS
+   ============================================================ */
+function openFilterPopover(anchor, group) {
+  const u = getUI(group.id);
+  const wrap = h('div', {});
+  wrap.append(h('div', { class: 'popover-label' }, 'Filter by tag'));
+
+  const makeItem = (label, value) => {
+    const btn = h('button', { class: 'popover-item' + (u.filter === value ? ' active' : ''), type: 'button' },
+      h('span', {}, label),
+      u.filter === value ? h('span', { class: 'check-mark' }, iconEl('check', 14)) : null
+    );
+    btn.addEventListener('click', () => {
+      u.filter = value;
+      closePopover();
+      renderApp();
+    });
+    return btn;
+  };
+
+  wrap.append(makeItem('All', 'all'));
+  group.tags.forEach(t => wrap.append(makeItem(t.name, t.id)));
+  if (!group.tags.length) {
+    wrap.append(h('div', { class: 'muted small pad' }, 'No tags in this group yet.'));
+  }
+  openPopover(anchor, wrap);
+}
+
+function openSortPopover(anchor, group) {
+  const u = getUI(group.id);
+  const options = [
+    ['newest', 'Newest first'],
+    ['oldest', 'Oldest first'],
+    ['name-asc', 'Name (A–Z)'],
+    ['name-desc', 'Name (Z–A)'],
+    ['updated', 'Recently updated']
+  ];
+  const wrap = h('div', {});
+  wrap.append(h('div', { class: 'popover-label' }, 'Sort by'));
+  options.forEach(([value, label]) => {
+    const btn = h('button', { class: 'popover-item' + (u.sort === value ? ' active' : ''), type: 'button' },
+      h('span', {}, label),
+      u.sort === value ? h('span', { class: 'check-mark' }, iconEl('check', 14)) : null
+    );
+    btn.addEventListener('click', () => {
+      u.sort = value;
+      closePopover();
+      renderApp();
+    });
+    wrap.append(btn);
+  });
+  openPopover(anchor, wrap);
+}
+
+/* ============================================================
+   ENTRY RENDERING
+   ============================================================ */
+function renderEntry(group, entry) {
+  const hasImages = group.fields.images && entry.images && entry.images.length > 0;
+  const node = h('div', {
+    class: 'entry ' + (hasImages ? 'entry-card' : 'entry-row') + (entry.done ? ' is-done' : ''),
+    'data-entry': entry.id
+  });
+
+  node.addEventListener('click', (ev) => {
+    if (ev.target.closest('.entry-more') || ev.target.closest('.done-check')) return;
+    openEntryOverlay(group, entry);
+  });
+
+  let doneBtn = null;
+  if (group.fields.done) {
+    doneBtn = h('button', { class: 'done-check' + (entry.done ? ' checked' : ''), type: 'button', title: 'Toggle done' },
+      entry.done ? iconEl('check', 12) : null
+    );
+    doneBtn.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      entry.done = !entry.done;
+      entry.updatedAt = new Date().toISOString();
+      doneBtn.classList.toggle('checked', entry.done);
+      doneBtn.replaceChildren(entry.done ? iconEl('check', 12) : document.createTextNode(''));
+      node.classList.toggle('is-done', entry.done);
+      touchGroup(group.id);
+      save();
+    });
+  }
+
+  const moreBtn = h('button', { class: 'entry-more', type: 'button', title: 'More' }, iconEl('more', 15));
+  moreBtn.addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    openEntryMenu(moreBtn, group, entry);
+  });
+
+  const top = h('div', { class: 'entry-top' }, doneBtn, h('div', { class: 'entry-title' }, entry.name), moreBtn);
+
+  const main = h('div', { class: 'entry-main' }, top);
+
+  if (!hasImages && group.fields.description && entry.description) {
+    main.append(h('div', { class: 'entry-desc' }, entry.description));
+  }
+
+  const meta = h('div', { class: 'entry-meta' });
+  if (group.fields.tags) {
+    (entry.tags || []).forEach(tid => {
+      const tag = group.tags.find(t => t.id === tid);
+      if (tag) meta.append(h('span', { class: 'chip sm' }, tag.name));
+    });
+  }
+  if (group.fields.voice && entry.voice) {
+    meta.append(h('span', { class: 'chip sm voice' }, iconEl('mic', 11), 'Voice'));
+  }
+  if (group.fields.images && entry.images && entry.images.length > 1) {
+    meta.append(h('span', { class: 'chip sm plain' }, iconEl('image', 11), entry.images.length));
+  }
+  if (group.fields.url && entry.url) {
+    meta.append(h('span', { class: 'chip sm plain' }, iconEl('link', 11), truncate(entry.url.replace(/^https?:\/\//i, ''), 22)));
+  }
+  if (group.fields.location && entry.location) {
+    meta.append(h('span', { class: 'chip sm plain' }, iconEl('pin', 11), truncate(entry.location, 22)));
+  }
+  if (meta.children.length) main.append(meta);
+
+  if (group.fields.countdown && entry.countdown) {
+    main.append(countdownNode(entry));
+  }
+
+  if (hasImages) {
+    node.append(h('div', { class: 'entry-thumb' }, h('img', { src: entry.images[0], alt: '' })));
+  }
+  node.append(main);
+  return node;
+}
+
+function countdownNode(entry) {
+  const wrap = h('div', { class: 'countdown' });
+  const fill = h('div', { class: 'cd-fill' });
+  const bar = h('div', { class: 'cd-bar' }, fill);
+  const txt = h('div', { class: 'cd-text' });
+  wrap.append(bar, txt);
+
+  const update = () => {
+    const due = new Date(entry.countdown).getTime();
+    const created = new Date(entry.createdAt).getTime();
+    const now = Date.now();
+    const total = due - created;
+    const pct = total > 0 ? Math.min(100, Math.max(0, ((now - created) / total) * 100)) : 100;
+    fill.style.width = pct + '%';
+    const overdue = now > due;
+    wrap.classList.toggle('overdue', overdue);
+    txt.textContent = countdownText(entry.countdown) + ' · until ' + fmtDateTime(entry.countdown);
+  };
+  update();
+  wrap._update = update;
+  return wrap;
+}
+
+setInterval(() => {
+  document.querySelectorAll('.countdown').forEach(el => { if (el._update) el._update(); });
+}, 1000);
+
+/* ------------------------------------------------------------
+   Entry three-dot menu
+   ------------------------------------------------------------ */
+function moveEntryToTrash(group, entry) {
+  group.entries = group.entries.filter(e => e.id !== entry.id);
+  const trashItem = {
+    id: uid(),
+    type: 'entry',
+    deletedAt: new Date().toISOString(),
+    groupId: group.id,
+    groupName: group.name,
+    data: entry
+  };
+  State.trash.push(trashItem);
+  touchGroup(group.id);
+  touchTrash(trashItem.id);
+  save();
+  renderApp();
+  toast('Entry moved to Trash');
+}
+
+function openEntryMenu(anchor, group, entry) {
+  const wrap = h('div', {});
+  const edit = h('button', { class: 'popover-item', type: 'button' }, iconEl('edit', 14), 'Edit entry');
+  edit.addEventListener('click', () => {
+    closePopover();
+    openEntryModal(group, entry);
+  });
+  const del = h('button', { class: 'popover-item danger', type: 'button' }, iconEl('trash', 14), 'Delete entry');
+  del.addEventListener('click', () => {
+    closePopover();
+    confirmDialog({
+      title: 'Delete entry?',
+      message: `“${entry.name}” will be moved to the Trash. You can restore it within 30 days.`,
+      confirmText: 'Move to Trash',
+      danger: true,
+      onConfirm: () => moveEntryToTrash(group, entry)
+    });
+  });
+  wrap.append(edit, del);
+  openPopover(anchor, wrap);
+}
+
+/* ============================================================
+   GROUP MODAL (create / edit)
+   ============================================================ */
+const FIELD_DEFS = [
+  ['name', 'Name', 'Required — every entry needs one'],
+  ['description', 'Description', 'A longer note for the entry'],
+  ['images', 'Images', 'Attach photos by picking or dropping'],
+  ['voice', 'Voice Recorder', 'Record audio notes'],
+  ['tags', 'Tags', 'Reusable labels you can filter by'],
+  ['url', 'URL', 'Attach a link to any entry'],
+  ['location', 'Location', 'Attach an address or a place'],
+  ['done', 'Done tracking', 'Tick entries on and off'],
+  ['countdown', 'Countdown', 'A due date with a live countdown']
+];
+
+const DEFAULT_FIELDS = {
+  name: true, description: false, images: false, voice: false,
+  tags: false, url: false, location: false, done: false, countdown: false
+};
+
+function openGroupModal(group) {
+  const isEdit = !!group;
+  const draftFields = isEdit
+    ? Object.assign({}, group.fields)
+    : Object.assign({}, DEFAULT_FIELDS);
+
+  const nameInput = h('input', {
+    class: 'input', type: 'text', placeholder: 'e.g. Weekend Projects',
+    value: isEdit ? group.name : '', maxlength: 80
+  });
+  const descInput = h('textarea', {
+    class: 'input', placeholder: 'What is this group about? (optional)', rows: 4, maxlength: 400
+  });
+  descInput.value = isEdit ? (group.description || '') : '';
+
+  const nameError = h('div', { class: 'field-error hidden' }, 'Please enter a name.');
+  nameInput.addEventListener('input', () => {
+    nameInput.classList.remove('error');
+    nameError.classList.add('hidden');
+  });
+
+  const toggleList = h('div', { class: 'toggle-list' });
+  FIELD_DEFS.forEach(([key, label, hint]) => {
+    const input = h('input', { type: 'checkbox' });
+    input.checked = !!draftFields[key];
+    if (key === 'name' || isEdit) input.disabled = true;
+    input.addEventListener('change', () => { draftFields[key] = input.checked; });
+
+    const sw = h('label', { class: 'switch' }, input, h('span', { class: 'switch-track' }, h('span', { class: 'switch-thumb' })));
+
+    toggleList.append(
+      h('div', { class: 'toggle-row' },
+        h('div', { class: 'toggle-text' },
+          h('div', { class: 'toggle-name' }, label, key === 'name' ? h('span', { class: 'muted small' }, ' · required') : null),
+          h('div', { class: 'toggle-hint' }, hint)
+        ),
+        sw
+      )
+    );
+  });
+
+  const leftCol = h('div', {},
+    h('div', { class: 'field-label', style: { marginBottom: '8px' } }, isEdit ? 'ENTRY FIELDS (locked)' : 'WHAT ENTRIES CAN CONTAIN'),
+    toggleList,
+    isEdit ? h('p', { class: 'muted small', style: { marginTop: '12px', lineHeight: '1.55' } },
+      'Fields can’t be changed after a group is created — turning them off would delete existing entry data.') : null
+  );
+
+  const rightCol = h('div', {},
+    h('div', { class: 'field' },
+      h('div', { class: 'field-label' }, 'GROUP NAME'),
+      nameInput,
+      nameError
+    ),
+    h('div', { class: 'field' },
+      h('div', { class: 'field-label' }, 'DESCRIPTION'),
+      descInput
+    )
+  );
+
+  const body = h('div', { class: 'modal-grid' }, leftCol, rightCol);
+
+  const cancelBtn = h('button', { class: 'btn', type: 'button' }, 'Cancel');
+  const saveBtn = h('button', { class: 'btn primary', type: 'button' }, isEdit ? 'Save Changes' : 'Create Group');
+
+  const modal = openModal({
+    title: isEdit ? 'Edit Group' : 'New Group',
+    body,
+    actions: [cancelBtn, saveBtn],
+    wide: true
+  });
+
+  cancelBtn.addEventListener('click', modal.close);
+
+  saveBtn.addEventListener('click', () => {
+    const name = nameInput.value.trim();
+    if (!name) {
+      nameInput.classList.add('error');
+      nameError.classList.remove('hidden');
+      nameInput.focus();
+      return;
+    }
+    const description = descInput.value.trim();
+
+    if (isEdit) {
+      group.name = name;
+      group.description = description;
+      group.updatedAt = new Date().toISOString();
+      touchGroup(group.id);
+      toast('Group updated');
+    } else {
+      const newGroup = {
+        id: uid(),
+        name,
+        description,
+        fields: Object.assign({}, DEFAULT_FIELDS, draftFields, { name: true }),
+        tags: [],
+        entries: [],
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+      State.groups.push(newGroup);
+      touchGroup(newGroup.id);
+      toast('Group created');
+    }
+    save();
+    modal.close();
+    renderApp();
+  });
+
+  setTimeout(() => nameInput.focus(), 60);
+}
+
+/* ============================================================
+   ENTRY MODAL (create / edit)
+   ============================================================ */
+function openEntryModal(group, entry) {
+  const isEdit = !!entry;
+  const draft = entry
+    ? JSON.parse(JSON.stringify(entry))
+    : {
+        id: uid(),
+        name: '',
+        description: '',
+        images: [],
+        voice: null,
+        tags: [],
+        url: '',
+        location: '',
+        done: false,
+        countdown: null,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+
+  const wrap = h('div', {});
+
+  /* --- Name --- */
+  const nameInput = h('input', { class: 'input', type: 'text', placeholder: 'Entry name', value: draft.name, maxlength: 120 });
+  const nameError = h('div', { class: 'field-error hidden' }, 'Name is required.');
+  nameInput.addEventListener('input', () => {
+    nameInput.classList.remove('error');
+    nameError.classList.add('hidden');
+  });
+  wrap.append(h('div', { class: 'field' },
+    h('div', { class: 'field-label' }, 'NAME *'),
+    nameInput, nameError
+  ));
+
+  /* --- Description --- */
+  if (group.fields.description) {
+    const ta = h('textarea', { class: 'input', placeholder: 'Add a description…', rows: 3, maxlength: 1000 });
+    ta.value = draft.description || '';
+    ta.addEventListener('input', () => { draft.description = ta.value; });
+    wrap.append(h('div', { class: 'field' }, h('div', { class: 'field-label' }, 'DESCRIPTION'), ta));
+  }
+
+  /* --- URL --- */
+  if (group.fields.url) {
+    const urlInput = h('input', { class: 'input', type: 'url', placeholder: 'https://example.com', value: draft.url || '', maxlength: 2048 });
+    urlInput.addEventListener('input', () => { draft.url = urlInput.value.trim(); });
+    wrap.append(h('div', { class: 'field' },
+      h('div', { class: 'field-label' }, 'URL'),
+      urlInput
+    ));
+  }
+
+  /* --- Location --- */
+  if (group.fields.location) {
+    const locInput = h('input', { class: 'input', type: 'text', placeholder: 'Address, place or coordinates', value: draft.location || '', maxlength: 240 });
+    locInput.addEventListener('input', () => { draft.location = locInput.value.trim(); });
+
+    const geoBtn = h('button', { class: 'btn sm', type: 'button', title: 'Use my current coordinates' },
+      iconEl('pin', 13), 'Current');
+    geoBtn.addEventListener('click', () => {
+      if (!navigator.geolocation) { toast('Geolocation is not supported', 'error'); return; }
+      geoBtn.disabled = true;
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          geoBtn.disabled = false;
+          const { latitude, longitude } = pos.coords;
+          locInput.value = `${latitude.toFixed(5)}, ${longitude.toFixed(5)}`;
+          draft.location = locInput.value;
+          toast('Location captured');
+        },
+        () => {
+          geoBtn.disabled = false;
+          toast('Could not get your location', 'error');
+        },
+        { timeout: 10000 }
+      );
+    });
+
+    wrap.append(h('div', { class: 'field' },
+      h('div', { class: 'field-label' }, 'LOCATION'),
+      h('div', { class: 'field-row' }, locInput, geoBtn)
+    ));
+  }
+
+  /* --- Images --- */
+  if (group.fields.images) {
+    const fileInput = h('input', { type: 'file', accept: 'image/*', multiple: true, style: { display: 'none' } });
+    const grid = h('div', { class: 'img-grid' });
+
+    const renderPreviews = () => {
+      grid.replaceChildren();
+      draft.images.forEach((src, i) => {
+        const x = h('button', { class: 'x', type: 'button', title: 'Remove' }, '×');
+        x.addEventListener('click', () => {
+          draft.images.splice(i, 1);
+          renderPreviews();
+        });
+        grid.append(h('div', { class: 'img-thumb' }, h('img', { src, alt: '' }), x));
+      });
+    };
+    renderPreviews();
+
+    const dz = h('div', { class: 'dropzone' },
+      iconEl('image', 22),
+      h('span', {}, 'Drop images here, or click to browse')
+    );
+    dz.addEventListener('click', () => fileInput.click());
+    dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag'); });
+    dz.addEventListener('dragleave', () => dz.classList.remove('drag'));
+    dz.addEventListener('drop', e => {
+      e.preventDefault();
+      dz.classList.remove('drag');
+      handleFiles(e.dataTransfer.files);
+    });
+    fileInput.addEventListener('change', () => {
+      handleFiles(fileInput.files);
+      fileInput.value = '';
+    });
+
+    function handleFiles(files) {
+      Array.from(files).filter(f => f.type.startsWith('image/')).forEach(f => {
+        const fr = new FileReader();
+        fr.onload = () => { draft.images.push(fr.result); renderPreviews(); };
+        fr.readAsDataURL(f);
+      });
+    }
+
+    wrap.append(h('div', { class: 'field' },
+      h('div', { class: 'field-label' }, 'IMAGES'),
+      dz, fileInput, grid
+    ));
+  }
+
+  /* --- Voice recorder --- */
+  if (group.fields.voice) {
+    const recorder = createVoiceRecorder(draft.voice, (dataUrl) => { draft.voice = dataUrl; });
+    wrap.append(h('div', { class: 'field' },
+      h('div', { class: 'field-label' }, 'VOICE RECORDING'),
+      recorder
+    ));
+  }
+
+  /* --- Tags --- */
+  if (group.fields.tags) {
+    const picker = createTagPicker(group, draft.tags || [], (ids) => { draft.tags = ids; });
+    wrap.append(h('div', { class: 'field' },
+      h('div', { class: 'field-label' }, 'TAGS'),
+      picker
+    ));
+  }
+
+  /* --- Done --- */
+  if (group.fields.done) {
+    const cb = h('input', { type: 'checkbox' });
+    cb.checked = !!draft.done;
+    cb.addEventListener('change', () => { draft.done = cb.checked; });
+    const sw = h('label', { class: 'switch' }, cb, h('span', { class: 'switch-track' }, h('span', { class: 'switch-thumb' })));
+    wrap.append(h('div', { class: 'field' },
+      h('div', { class: 'toggle-row', style: { padding: '0' } },
+        h('div', { class: 'toggle-text' },
+          h('div', { class: 'toggle-name' }, 'Mark as done'),
+          h('div', { class: 'toggle-hint' }, 'You can toggle this any time from the entry')
+        ),
+        sw
+      )
+    ));
+  }
+
+  /* --- Countdown --- */
+  if (group.fields.countdown) {
+    const dt = h('input', { class: 'input', type: 'datetime-local', value: toLocalInput(draft.countdown) });
+    dt.addEventListener('change', () => {
+      draft.countdown = dt.value ? new Date(dt.value).toISOString() : null;
+    });
+    wrap.append(h('div', { class: 'field' },
+      h('div', { class: 'field-label' }, 'COUNTDOWN — END DATE & TIME'),
+      dt
+    ));
+  }
+
+  const cancelBtn = h('button', { class: 'btn', type: 'button' }, 'Cancel');
+  const saveBtn = h('button', { class: 'btn primary', type: 'button' }, isEdit ? 'Save Changes' : 'Save Entry');
+
+  const modal = openModal({
+    title: isEdit ? 'Edit Entry' : 'New Entry',
+    body: wrap,
+    actions: [cancelBtn, saveBtn]
+  });
+
+  cancelBtn.addEventListener('click', modal.close);
+
+  saveBtn.addEventListener('click', () => {
+    const name = nameInput.value.trim();
+    if (!name) {
+      nameInput.classList.add('error');
+      nameError.classList.remove('hidden');
+      nameInput.focus();
+      return;
+    }
+    draft.name = name;
+    draft.updatedAt = new Date().toISOString();
+
+    if (isEdit) {
+      Object.assign(entry, draft);
+    } else {
+      group.entries.push(draft);
+    }
+    touchGroup(group.id);
+    save();
+    modal.close();
+    refreshGroupBody(group.id);
+    toast(isEdit ? 'Entry updated' : 'Entry added');
+  });
+
+  setTimeout(() => nameInput.focus(), 60);
+}
+
+/* ============================================================
+   VOICE RECORDER COMPONENT
+   ============================================================ */
+function createVoiceRecorder(initial, onChange) {
+  let dataUrl = initial || null;
+  let mode = dataUrl ? 'recorded' : 'idle';
+  let paused = false;
+  let elapsed = 0;
+  let startedAt = 0;
+  let timerId = null;
+  let mediaRecorder = null;
+  let stream = null;
+  let chunks = [];
+
+  const root = h('div', { class: 'voice-recorder' });
+
+  const stopStream = () => {
+    if (stream) { stream.getTracks().forEach(t => t.stop()); stream = null; }
+  };
+  const clearTimer = () => { if (timerId) { clearInterval(timerId); timerId = null; } };
+
+  function tick() {
+    const total = elapsed + (paused ? 0 : Date.now() - startedAt);
+    const s = Math.floor(total / 1000);
+    const mm = String(Math.floor(s / 60)).padStart(2, '0');
+    const ss = String(s % 60).padStart(2, '0');
+    const el = root.querySelector('.rec-time');
+    if (el) el.textContent = `${mm}:${ss}`;
+  }
+
+  async function start() {
+    if (!navigator.mediaDevices || !window.MediaRecorder) {
+      toast('Recording is not supported in this browser', 'error');
+      return;
+    }
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch (err) {
+      toast('Microphone access denied', 'error');
+      return;
+    }
+    chunks = [];
+    mediaRecorder = new MediaRecorder(stream);
+    mediaRecorder.ondataavailable = e => { if (e.data && e.data.size) chunks.push(e.data); };
+    mediaRecorder.onstop = () => {
+      clearTimer();
+      const blob = new Blob(chunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+      const fr = new FileReader();
+      fr.onload = () => {
+        dataUrl = fr.result;
+        mode = 'recorded';
+        paused = false;
+        elapsed = 0;
+        onChange(dataUrl);
+        render();
+      };
+      fr.readAsDataURL(blob);
+      stopStream();
+      mediaRecorder = null;
+    };
+    mediaRecorder.start();
+    mode = 'recording';
+    paused = false;
+    elapsed = 0;
+    startedAt = Date.now();
+    clearTimer();
+    timerId = setInterval(tick, 200);
+    render();
+  }
+
+  function pauseResume() {
+    if (!mediaRecorder) return;
+    if (paused) {
+      mediaRecorder.resume();
+      paused = false;
+      startedAt = Date.now();
+    } else {
+      mediaRecorder.pause();
+      elapsed += Date.now() - startedAt;
+      paused = true;
+    }
+    render();
+  }
+
+  function finish() {
+    if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+    clearTimer();
+  }
+
+  function cancel() {
+    if (mediaRecorder) {
+      mediaRecorder.onstop = null;
+      try { if (mediaRecorder.state !== 'inactive') mediaRecorder.stop(); } catch (e) {}
+    }
+    stopStream();
+    clearTimer();
+    mediaRecorder = null;
+    chunks = [];
+    elapsed = 0;
+    paused = false;
+    mode = dataUrl ? 'recorded' : 'idle';
+    render();
+  }
+
+  function removeRecording() {
+    dataUrl = null;
+    onChange(null);
+    mode = 'idle';
+    render();
+  }
+
+  function redo() {
+    dataUrl = null;
+    onChange(null);
+    start();
+  }
+
+  function render() {
+    root.replaceChildren();
+
+    if (mode === 'idle') {
+      const btn = h('button', { class: 'btn primary sm', type: 'button' }, iconEl('mic', 14), 'Record voice note');
+      btn.addEventListener('click', start);
+      root.append(h('div', { class: 'rec-row' }, btn,
+        h('span', { class: 'muted small' }, 'Microphone access will be requested.')));
+      return;
+    }
+
+    if (mode === 'recording') {
+      const time = h('div', { class: 'rec-time' }, '00:00');
+      const pauseBtn = h('button', { class: 'btn sm', type: 'button' },
+        paused ? iconEl('play', 13) : iconEl('pause', 13), paused ? 'Resume' : 'Pause');
+      pauseBtn.addEventListener('click', pauseResume);
+      const doneBtn = h('button', { class: 'btn sm primary', type: 'button' }, 'Done');
+      doneBtn.addEventListener('click', finish);
+      const cancelBtn = h('button', { class: 'btn sm', type: 'button' }, 'Cancel');
+      cancelBtn.addEventListener('click', cancel);
+
+      root.append(
+        h('div', { class: 'rec-row' }, h('span', { class: 'rec-dot' }), time,
+          h('span', { class: 'muted small' }, paused ? 'Paused' : 'Recording…')),
+        h('div', { class: 'rec-row' }, pauseBtn, doneBtn, cancelBtn)
+      );
+      return;
+    }
+
+    const audio = h('audio', { controls: true, src: dataUrl });
+    const redoBtn = h('button', { class: 'btn sm', type: 'button' }, iconEl('refresh', 13), 'Redo');
+    redoBtn.addEventListener('click', redo);
+    const delBtn = h('button', { class: 'btn sm danger', type: 'button' }, iconEl('trash', 13), 'Delete');
+    delBtn.addEventListener('click', removeRecording);
+
+    root.append(
+      h('div', { class: 'rec-row' }, h('span', { class: 'chip sm voice' }, iconEl('mic', 11), 'Voice note saved')),
+      audio,
+      h('div', { class: 'rec-row' }, redoBtn, delBtn)
+    );
+  }
+
+  root._cleanup = () => {
+    if (mediaRecorder) {
+      mediaRecorder.onstop = null;
+      try { if (mediaRecorder.state !== 'inactive') mediaRecorder.stop(); } catch (e) {}
+    }
+    stopStream();
+    clearTimer();
+  };
+
+  render();
+  return root;
+}
+
+/* ============================================================
+   TAG PICKER COMPONENT
+   ============================================================ */
+function createTagPicker(group, selectedIds, onChange) {
+  let selected = (selectedIds || []).slice();
+
+  const wrap = h('div', { class: 'tag-picker' });
+  const chips = h('div', { class: 'tag-chips' });
+  const openBtn = h('button', { class: 'btn sm', type: 'button' }, '+ Tags');
+
+  function renderChips() {
+    chips.replaceChildren();
+    const valid = selected.filter(id => group.tags.some(t => t.id === id));
+    if (valid.length !== selected.length) {
+      selected = valid;
+      onChange(selected);
+    }
+    if (!valid.length) {
+      chips.append(h('span', { class: 'muted small' }, 'No tags selected'));
+    } else {
+      valid.forEach(id => {
+        const tag = group.tags.find(t => t.id === id);
+        const x = h('button', { class: 'chip-x', type: 'button' }, '×');
+        x.addEventListener('click', () => {
+          selected = selected.filter(s => s !== id);
+          onChange(selected);
+          renderChips();
+          if (activePopover) drawPopover();
+        });
+        chips.append(h('span', { class: 'chip' }, tag.name, x));
+      });
+    }
+  }
+
+  function drawPopover() {
+    if (!activePopover) return;
+    const content = activePopover.querySelector('.tag-pop');
+    if (!content) return;
+    content.replaceChildren();
+
+    const list = h('div', { class: 'tag-list', 'data-csb': 'y' });
+    if (!group.tags.length) {
+      list.append(h('div', { class: 'muted small pad' }, 'No tags in this group yet.'));
+    }
+    group.tags.forEach(tag => {
+      const cb = h('input', { type: 'checkbox' });
+      cb.checked = selected.includes(tag.id);
+      cb.addEventListener('change', () => {
+        if (cb.checked) {
+          if (!selected.includes(tag.id)) selected.push(tag.id);
+        } else {
+          selected = selected.filter(s => s !== tag.id);
+        }
+        onChange(selected);
+        renderChips();
+      });
+
+      const renameBtn = h('button', { class: 'mini-btn', type: 'button', title: 'Rename tag' }, iconEl('edit', 13));
+      renameBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const input = h('input', { class: 'input sm', type: 'text', value: tag.name });
+        const saveBtn = h('button', { class: 'mini-btn', type: 'button', title: 'Save' }, iconEl('check', 14));
+        const commit = () => {
+          const v = input.value.trim();
+          if (v) { tag.name = v; touchGroup(group.id); save(); }
+          drawPopover();
+          renderChips();
+        };
+        saveBtn.addEventListener('click', commit);
+        input.addEventListener('keydown', ev => { if (ev.key === 'Enter') { ev.preventDefault(); commit(); } });
+        row.replaceChildren(input, saveBtn);
+        input.focus();
+        input.select();
+      });
+
+      const delBtn = h('button', { class: 'mini-btn danger', type: 'button', title: 'Delete tag' }, iconEl('trash', 13));
+      delBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        confirmDialog({
+          title: 'Delete tag?',
+          message: `“${tag.name}” will be removed from this group and from every entry using it.`,
+          confirmText: 'Delete tag',
+          danger: true,
+          onConfirm: () => {
+            group.tags = group.tags.filter(t => t.id !== tag.id);
+            group.entries.forEach(en => {
+              en.tags = (en.tags || []).filter(t => t !== tag.id);
+            });
+            selected = selected.filter(s => s !== tag.id);
+            onChange(selected);
+            const u = getUI(group.id);
+            if (u.filter === tag.id) u.filter = 'all';
+            touchGroup(group.id);
+            save();
+            renderChips();
+            if (activePopover) { closePopover(); openBtn.click(); }
+            if (currentView === 'home') renderApp();
+          }
+        });
+      });
+
+      const row = h('div', { class: 'tag-row' }, cb, h('span', { class: 'tag-row-name' }, tag.name), renameBtn, delBtn);
+      list.append(row);
+    });
+
+    content.append(list);
+
+    const input = h('input', { class: 'input sm', type: 'text', placeholder: 'New tag name', maxlength: 30 });
+    const addBtn = h('button', { class: 'btn sm primary', type: 'button' }, 'Create');
+    const create = () => {
+      const v = input.value.trim();
+      if (!v) return;
+      if (group.tags.some(t => t.name.toLowerCase() === v.toLowerCase())) {
+        toast('That tag already exists');
+        return;
+      }
+      const tag = { id: uid(), name: v };
+      group.tags.push(tag);
+      selected.push(tag.id);
+      onChange(selected);
+      touchGroup(group.id);
+      save();
+      renderChips();
+      drawPopover();
+      input.value = '';
+      input.focus();
+    };
+    addBtn.addEventListener('click', create);
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); create(); } });
+
+    content.append(h('div', { class: 'tag-create' }, input, addBtn));
+    scheduleRefresh();
+  }
+
+  openBtn.addEventListener('click', () => {
+    const content = h('div', { class: 'tag-pop' });
+    openPopover(openBtn, content);
+    if (activePopover) drawPopover();
+  });
+
+  renderChips();
+  wrap.append(chips, openBtn);
+  return wrap;
+}
+
+/* ============================================================
+   ENTRY OVERLAY
+   ============================================================ */
+let closeOverlay = () => {};
+
+function openEntryOverlay(group, entry) {
+  const root = document.getElementById('overlay-root');
+  root.replaceChildren();
+
+  const images = (group.fields.images && entry.images) ? entry.images.slice() : [];
+  let ci = 0;
+
+  const ov = h('div', { class: 'overlay' });
+  const panel = h('div', { class: 'overlay-panel', 'data-csb': 'y' });
+
+  const closeBtn = h('button', { class: 'icon-btn', type: 'button', title: 'Close' }, iconEl('close', 18));
+
+  const editBtn = h('button', { class: 'icon-btn', type: 'button', title: 'Edit entry' }, iconEl('edit', 17));
+  editBtn.addEventListener('click', () => {
+    close();
+    openEntryModal(group, entry);
+  });
+
+  const delBtn = h('button', { class: 'icon-btn danger', type: 'button', title: 'Delete entry' }, iconEl('trash', 17));
+  delBtn.addEventListener('click', () => {
+    confirmDialog({
+      title: 'Delete entry?',
+      message: `“${entry.name}” will be moved to the Trash. You can restore it within 30 days.`,
+      confirmText: 'Move to Trash',
+      danger: true,
+      onConfirm: () => { close(); moveEntryToTrash(group, entry); }
+    });
+  });
+
+  const head = h('div', { class: 'ov-head' },
+    h('div', { style: { flex: '1', minWidth: '0' } },
+      h('h2', { class: 'ov-title' }, entry.name),
+      h('div', { class: 'muted small', style: { marginTop: '4px' } },
+        group.name + ' · created ' + fmtDate(entry.createdAt) +
+        (entry.updatedAt && entry.updatedAt !== entry.createdAt ? ' · edited ' + fmtDate(entry.updatedAt) : ''))
+    ),
+    editBtn, delBtn, closeBtn
+  );
+
+  const body = h('div', { class: 'ov-body' });
+
+  if (group.fields.description && entry.description) {
+    body.append(h('div', { class: 'ov-section' },
+      h('div', { class: 'ov-label' }, 'Description'),
+      h('div', { class: 'ov-desc' }, entry.description)
+    ));
+  }
+
+  if (group.fields.url && entry.url) {
+    const href = normalizeUrl(entry.url);
+    body.append(h('div', { class: 'ov-section' },
+      h('div', { class: 'ov-label' }, 'Link'),
+      h('a', { class: 'ov-link', href, target: '_blank', rel: 'noopener noreferrer' },
+        iconEl('link', 14), entry.url)
+    ));
+  }
+
+  if (group.fields.location && entry.location) {
+    const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(entry.location);
+    body.append(h('div', { class: 'ov-section' },
+      h('div', { class: 'ov-label' }, 'Location'),
+      h('a', { class: 'ov-link', href: mapsUrl, target: '_blank', rel: 'noopener noreferrer' },
+        iconEl('pin', 14), entry.location)
+    ));
+  }
+
+  let showImage = () => {};
+  if (images.length) {
+    const img = h('img', { src: images[0], alt: '' });
+    const counter = h('div', { class: 'ov-counter' }, `1 / ${images.length}`);
+    const carousel = h('div', { class: 'ov-carousel' }, img, counter);
+
+    if (images.length > 1) {
+      const prev = h('button', { class: 'ov-nav prev', type: 'button', title: 'Previous' }, iconEl('left', 18));
+      const next = h('button', { class: 'ov-nav next', type: 'button', title: 'Next' }, iconEl('right', 18));
+      prev.addEventListener('click', () => showImage(ci - 1));
+      next.addEventListener('click', () => showImage(ci + 1));
+      carousel.append(prev, next);
+    }
+
+    showImage = (i) => {
+      ci = (i + images.length) % images.length;
+      img.src = images[ci];
+      counter.textContent = `${ci + 1} / ${images.length}`;
+    };
+
+    body.append(h('div', { class: 'ov-section' }, carousel));
+  }
+
+  if (group.fields.voice && entry.voice) {
+    body.append(h('div', { class: 'ov-section' },
+      h('div', { class: 'ov-label' }, 'Voice recording'),
+      h('audio', { controls: true, src: entry.voice, style: { width: '100%' } })
+    ));
+  }
+
+  if (group.fields.tags && (entry.tags || []).length) {
+    const tagWrap = h('div', { class: 'ov-tags' });
+    entry.tags.forEach(id => {
+      const t = group.tags.find(x => x.id === id);
+      if (t) tagWrap.append(h('span', { class: 'chip' }, t.name));
+    });
+    if (tagWrap.children.length) {
+      body.append(h('div', { class: 'ov-section' },
+        h('div', { class: 'ov-label' }, 'Tags'),
+        tagWrap
+      ));
+    }
+  }
+
+  if (group.fields.done) {
+    const cb = h('input', { type: 'checkbox' });
+    cb.checked = !!entry.done;
+    cb.addEventListener('change', () => {
+      entry.done = cb.checked;
+      entry.updatedAt = new Date().toISOString();
+      touchGroup(group.id);
+      save();
+      refreshGroupBody(group.id);
+    });
+    const sw = h('label', { class: 'switch' }, cb, h('span', { class: 'switch-track' }, h('span', { class: 'switch-thumb' })));
+    body.append(h('div', { class: 'ov-section' },
+      h('div', { class: 'ov-label' }, 'Status'),
+      h('div', { class: 'toggle-row', style: { padding: '0' } },
+        h('div', { class: 'toggle-text' }, h('div', { class: 'toggle-name' }, entry.done ? 'Done' : 'Not done')),
+        sw
+      )
+    ));
+  }
+
+  if (group.fields.countdown && entry.countdown) {
+    body.append(h('div', { class: 'ov-section' },
+      h('div', { class: 'ov-label' }, 'Countdown'),
+      countdownNode(entry)
+    ));
+  }
+
+  panel.append(head, body);
+  ov.append(panel);
+  root.append(ov);
+  requestAnimationFrame(() => ov.classList.add('show'));
+
+  const keyHandler = (e) => {
+    if (e.key === 'Escape') { close(); return; }
+    if (images.length > 1) {
+      if (e.key === 'ArrowLeft') showImage(ci - 1);
+      if (e.key === 'ArrowRight') showImage(ci + 1);
+    }
+  };
+  document.addEventListener('keydown', keyHandler);
+
+  function close() {
+    document.removeEventListener('keydown', keyHandler);
+    ov.classList.remove('show');
+    setTimeout(() => {
+      if (root.firstChild === ov) root.replaceChildren();
+      scheduleScrollbars();
+    }, 200);
+  }
+  closeOverlay = close;
+
+  closeBtn.addEventListener('click', close);
+  ov.addEventListener('mousedown', e => { if (e.target === ov) close(); });
+
+  scheduleRefresh();
+  setTimeout(scheduleScrollbars, 180);
+}
+
+/* ============================================================
+   GROUP INFO MODAL
+   ============================================================ */
+function openGroupInfo(group) {
+  const entries = group.entries;
+  const imgCount = entries.reduce((s, e) => s + ((e.images || []).length), 0);
+  const voiceCount = entries.filter(e => e.voice).length;
+
+  const row = (label, value) => h('div', { class: 'list-card', style: { marginBottom: '8px', padding: '12px 14px' } },
+    h('div', { class: 'lc-main' },
+      h('div', { class: 'lc-title', style: { fontSize: '12px', color: 'var(--muted)', fontWeight: '600', letterSpacing: '.3px' } }, label),
+      h('div', { style: { fontSize: '14px', fontWeight: '600', marginTop: '3px', overflowWrap: 'anywhere' } }, value)
+    )
+  );
+
+  const body = h('div', {},
+    row('NAME', group.name),
+    row('DESCRIPTION', group.description || 'No description'),
+    row('CREATED', fmtDateTime(group.createdAt)),
+    row('LAST EDITED', fmtDateTime(group.updatedAt)),
+    row('ENTRIES', String(entries.length)),
+    row('TOTAL IMAGES', String(imgCount)),
+    row('TOTAL VOICE RECORDINGS', String(voiceCount)),
+    h('div', { class: 'field-label', style: { margin: '18px 0 8px' } }, 'ENABLED FEATURES'),
+    h('div', { style: { display: 'flex', flexWrap: 'wrap', gap: '6px' } },
+      FIELD_DEFS.filter(([k]) => group.fields[k]).map(([k, label]) => h('span', { class: 'chip' }, label))
+    )
+  );
+
+  const close = h('button', { class: 'btn primary', type: 'button' }, 'Close');
+  const m = openModal({ title: 'Group Info', body, actions: [close] });
+  close.addEventListener('click', m.close);
+}
+
+/* ============================================================
+   DELETE GROUP
+   ============================================================ */
+function confirmDeleteGroup(group) {
+  confirmDialog({
+    title: 'Delete group?',
+    message: `“${group.name}” and its ${group.entries.length} entr${group.entries.length === 1 ? 'y' : 'ies'} will be moved to the Trash. You can restore them within 30 days.`,
+    confirmText: 'Move to Trash',
+    danger: true,
+    onConfirm: () => {
+      State.groups = State.groups.filter(g => g.id !== group.id);
+      const trashItem = {
+        id: uid(),
+        type: 'group',
+        deletedAt: new Date().toISOString(),
+        data: group
+      };
+      State.trash.push(trashItem);
+      markGroupDeleted(group.id);
+      touchTrash(trashItem.id);
+      save();
+      renderApp();
+      toast('Group moved to Trash');
+    }
+  });
+}
+
+/* ============================================================
+   TRASH VIEW
+   ============================================================ */
+const TRASH_LIFETIME_MS = 30 * 24 * 60 * 60 * 1000;
+
+function daysLeft(deletedAt) {
+  const left = TRASH_LIFETIME_MS - (Date.now() - new Date(deletedAt).getTime());
+  return Math.max(0, Math.ceil(left / 86400000));
+}
+
+function renderTrash(container) {
+  const page = h('div', { class: 'page' });
+
+  const head = h('div', { class: 'page-head' }, h('h1', {}, 'Trash'));
+
+  if (State.trash.length) {
+    const restoreAll = h('button', { class: 'btn', type: 'button' }, iconEl('restore', 15), 'Restore All');
+    restoreAll.addEventListener('click', () => {
+      let restored = 0, skipped = 0;
+      const remaining = [];
+      State.trash.forEach(item => {
+        if (item.type === 'group') {
+          State.groups.push(item.data);
+          touchGroup(item.data.id);
+          markTrashDeleted(item.id);
+          restored++;
+        } else {
+          const g = getGroup(item.groupId);
+          if (g) {
+            g.entries.push(item.data);
+            touchGroup(g.id);
+            markTrashDeleted(item.id);
+            restored++;
+          } else {
+            skipped++;
+            remaining.push(item);
+          }
+        }
+      });
+      State.trash = remaining;
+      save();
+      renderApp();
+      toast(`Restored ${restored} item${restored === 1 ? '' : 's'}${skipped ? `, ${skipped} skipped (group gone)` : ''}`);
+    });
+
+    const wipeAll = h('button', { class: 'btn danger', type: 'button' }, iconEl('trash', 15), 'Delete All Permanently');
+    wipeAll.addEventListener('click', () => {
+      confirmDialog({
+        title: 'Delete everything permanently?',
+        message: `All ${State.trash.length} item(s) in the Trash will be permanently deleted. This cannot be undone.`,
+        confirmText: 'Delete Forever',
+        danger: true,
+        onConfirm: () => {
+          State.trash.forEach(t => markTrashDeleted(t.id));
+          markTrashCleared();
+          State.trash = [];
+          save();
+          renderApp();
+          toast('Trash emptied');
+        }
+      });
+    });
+
+    head.append(restoreAll, wipeAll);
+  }
+
+  page.append(head);
+
+  if (!State.trash.length) {
+    page.append(h('div', { class: 'empty-state', style: { height: 'auto', paddingTop: '70px' } },
+      h('div', { class: 'empty-icon' }, iconEl('trash', 26)),
+      h('h2', {}, 'Trash is empty'),
+      h('p', {}, 'Deleted groups and entries land here and stay for 30 days before being removed automatically.')
+    ));
+    container.append(page);
+    return;
+  }
+
+  const sorted = State.trash.slice().sort((a, b) => new Date(b.deletedAt) - new Date(a.deletedAt));
+
+  sorted.forEach(item => {
+    const isGroup = item.type === 'group';
+    const data = item.data;
+
+    const restoreBtn = h('button', { class: 'btn sm', type: 'button' }, iconEl('restore', 13), 'Restore');
+    restoreBtn.addEventListener('click', () => {
+      if (isGroup) {
+        State.groups.push(data);
+        touchGroup(data.id);
+      } else {
+        const g = getGroup(item.groupId);
+        if (!g) { toast('Original group no longer exists', 'error'); return; }
+        g.entries.push(data);
+        touchGroup(g.id);
+      }
+      State.trash = State.trash.filter(t => t.id !== item.id);
+      markTrashDeleted(item.id);
+      save();
+      renderApp();
+      toast('Restored');
+    });
+
+    const permBtn = h('button', { class: 'btn sm danger', type: 'button' }, iconEl('trash', 13), 'Delete');
+    permBtn.addEventListener('click', () => {
+      confirmDialog({
+        title: 'Delete permanently?',
+        message: `“${data.name}” will be gone forever. This cannot be undone.`,
+        confirmText: 'Delete Forever',
+        danger: true,
+        onConfirm: () => {
+          State.trash = State.trash.filter(t => t.id !== item.id);
+          markTrashDeleted(item.id);
+          save();
+          renderApp();
+          toast('Deleted permanently');
+        }
+      });
+    });
+
+    const metaBits = [
+      h('span', {}, 'Deleted ' + fmtDate(item.deletedAt)),
+      h('span', {}, daysLeft(item.deletedAt) + ' day(s) left')
+    ];
+    if (isGroup) {
+      metaBits.unshift(h('span', {}, data.entries.length + ' entr' + (data.entries.length === 1 ? 'y' : 'ies')));
+    } else if (item.groupName) {
+      metaBits.unshift(h('span', {}, 'From “' + item.groupName + '”'));
+    }
+
+    page.append(h('div', { class: 'list-card' },
+      h('div', { class: 'lc-main' },
+        h('div', { style: { display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '3px' } },
+          h('span', { class: 'badge' + (isGroup ? ' group' : '') }, isGroup ? 'Group' : 'Entry')
+        ),
+        h('div', { class: 'lc-title' }, data.name),
+        h('div', { class: 'lc-desc' }, data.description ? data.description : 'No description'),
+        h('div', { class: 'lc-meta' }, metaBits.map((b, i) => i ? [h('span', { class: 'muted' }, '·'), b] : b))
+      ),
+      h('div', { class: 'lc-actions' }, restoreBtn, permBtn)
+    ));
+  });
+
+  container.append(page);
+}
+
+/* ============================================================
+   SETTINGS VIEW
+   ============================================================ */
+const STORAGE_QUOTA_BYTES = 50 * 1024 * 1024; // fallback estimate
+
+function scanGroupInto(group, acc) {
+  acc.text.push(JSON.stringify({
+    n: group.name, d: group.description, t: group.tags,
+    c: group.createdAt, u: group.updatedAt, f: group.fields
+  }));
+  group.entries.forEach(e => {
+    (e.images || []).forEach(i => { acc.photos += i.length; });
+    if (e.voice) acc.voice += e.voice.length;
+    acc.text.push(JSON.stringify({
+      n: e.name, d: e.description, t: e.tags, c: e.countdown,
+      url: e.url, loc: e.location,
+      done: e.done, ca: e.createdAt, ua: e.updatedAt
+    }));
+  });
+}
+
+function estimateStorage() {
+  const active = { photos: 0, voice: 0, text: [] };
+  State.groups.forEach(g => scanGroupInto(g, active));
+
+  const trash = { photos: 0, voice: 0, text: [] };
+  State.trash.forEach(item => {
+    if (item.type === 'group') {
+      scanGroupInto(item.data, trash);
+    } else {
+      const e = item.data;
+      (e.images || []).forEach(i => { trash.photos += i.length; });
+      if (e.voice) trash.voice += e.voice.length;
+      trash.text.push(JSON.stringify({
+        n: e.name, d: e.description, t: e.tags, c: e.countdown,
+        url: e.url, loc: e.location,
+        done: e.done, ca: e.createdAt, ua: e.updatedAt
+      }));
+    }
+  });
+
+  const activeText = byteSize(active.text.join(''));
+  const trashText = byteSize(trash.text.join(''));
+
+  const activeTotal = active.photos + active.voice + activeText;
+  const trashTotal = trash.photos + trash.voice + trashText;
+
+  return {
+    photos: active.photos + trash.photos,
+    voice: active.voice + trash.voice,
+    text: activeText + trashText,
+    activeTotal,
+    trashTotal,
+    total: activeTotal + trashTotal,
+    free: Math.max(0, STORAGE_QUOTA_BYTES - (activeTotal + trashTotal)),
+    quota: STORAGE_QUOTA_BYTES
+  };
+}
+
+function renderSettings(container) {
+  const page = h('div', { class: 'page' });
+  page.append(h('div', { class: 'page-head' }, h('h1', {}, 'Settings')));
+
+  /* ---------- Theme ---------- */
+  const themeSection = h('div', { class: 'settings-section' },
+    h('h2', {}, 'Appearance'),
+    h('p', { class: 'hint' }, 'Choose how the app looks. “Device default” follows your system setting.')
+  );
+  const seg = h('div', { class: 'segmented' });
+  [['light', 'Light'], ['dark', 'Dark'], ['device', 'Device default']].forEach(([val, label]) => {
+    const b = h('button', { class: val === State.settings.theme ? 'active' : '', type: 'button' }, label);
+    b.addEventListener('click', () => {
+      State.settings.theme = val;
+      applyTheme();
+      touchSettings();
+      save();
+      renderApp();
+    });
+    seg.append(b);
+  });
+  themeSection.append(seg);
+  page.append(themeSection);
+
+  /* ---------- Storage ---------- */
+  const est = estimateStorage();
+  const pctActive = Math.min(100, (est.activeTotal / est.quota) * 100);
+  const pctTrash = Math.min(100 - pctActive, (est.trashTotal / est.quota) * 100);
+
+  const storageSection = h('div', { class: 'settings-section' },
+    h('h2', {}, 'Storage usage'),
+    h('p', { class: 'hint' }, 'Estimated space used by everything in the app, stored in IndexedDB. Real numbers appear once the browser reports them.')
+  );
+
+  const totalValueEl = h('div', { class: 'stat-value' }, fmtBytes(est.total));
+  const freeValueEl = h('div', { class: 'stat-value' }, fmtBytes(est.free));
+  const activeValueEl = h('div', { class: 'stat-value' }, fmtBytes(est.activeTotal));
+  const trashValueEl = h('div', { class: 'stat-value' }, fmtBytes(est.trashTotal));
+
+  storageSection.append(
+    h('div', { class: 'storage-bar' },
+      h('div', { class: 'fill-active', style: { width: pctActive + '%' } }),
+      h('div', { class: 'fill-trash', style: { width: pctTrash + '%' } })
+    ),
+    h('div', { class: 'storage-stats' },
+      h('div', { class: 'stat' }, h('div', { class: 'stat-label' }, 'TOTAL USED'), totalValueEl),
+      h('div', { class: 'stat' }, h('div', { class: 'stat-label' }, 'ACTIVE DATA'), activeValueEl),
+      h('div', { class: 'stat' }, h('div', { class: 'stat-label' }, 'IN TRASH'), trashValueEl),
+      h('div', { class: 'stat' }, h('div', { class: 'stat-label' }, 'FREE'), freeValueEl)
+    )
+  );
+
+  const breakdown = h('div', { class: 'breakdown' });
+  const totalForBars = Math.max(1, est.total);
+  [
+    ['Photos', est.photos, 'var(--chart-1)'],
+    ['Voice', est.voice, 'var(--chart-2)'],
+    ['Text & meta', est.text, 'var(--chart-3)'],
+    ['Other', Math.max(0, est.total - est.photos - est.voice - est.text), 'var(--chart-4)']
+  ].forEach(([name, val, color]) => {
+    breakdown.append(h('div', { class: 'bd-row' },
+      h('span', { class: 'bd-dot', style: { background: color } }),
+      h('span', { class: 'bd-name' }, name),
+      h('div', { class: 'bd-bar' }, h('div', { style: { width: (val / totalForBars * 100) + '%', background: color } })),
+      h('span', { class: 'bd-val' }, fmtBytes(val))
+    ));
+  });
+  storageSection.append(breakdown);
+  page.append(storageSection);
+
+  /* Async real estimate — update the numeric stats in place */
+  if (navigator.storage && navigator.storage.estimate) {
+    navigator.storage.estimate().then(real => {
+      if (!document.body.contains(container)) return;
+      const usage = real.usage || 0;
+      const quota = real.quota || STORAGE_QUOTA_BYTES;
+      totalValueEl.textContent = fmtBytes(usage);
+      freeValueEl.textContent = fmtBytes(Math.max(0, quota - usage));
+    }).catch(() => {});
+  }
+
+  /* ---------- Data management ---------- */
+  const dm = h('div', { class: 'settings-section' },
+    h('h2', {}, 'Data management'),
+    h('p', { class: 'hint' }, 'Export a full backup, import data back in, or reset the app completely.')
+  );
+
+  const exportBtn = h('button', { class: 'btn', type: 'button' }, iconEl('download', 15), 'Export All Data');
+  exportBtn.addEventListener('click', exportAllData);
+
+  const mergeBtn = h('button', { class: 'btn', type: 'button' }, iconEl('upload', 15), 'Import & Merge');
+  mergeBtn.addEventListener('click', () => importData('merge'));
+
+  const replaceBtn = h('button', { class: 'btn', type: 'button' }, iconEl('upload', 15), 'Import & Replace');
+  replaceBtn.addEventListener('click', () => importData('replace'));
+
+  const resetBtn = h('button', { class: 'btn danger', type: 'button' }, iconEl('alert', 15), 'Factory Reset');
+  resetBtn.addEventListener('click', () => {
+    confirmDialog({
+      title: 'Factory reset?',
+      message: 'Every group, entry and trash item will be permanently erased and the app will return to its initial state. This cannot be undone.',
+      confirmText: 'Erase Everything',
+      danger: true,
+      onConfirm: async () => {
+        State.groups = [];
+        State.trash = [];
+        try {
+          await DB.clearAll();
+          await DB.putSetting('theme', State.settings.theme);
+        } catch (err) {
+          console.error('[Reset] failed:', err);
+        }
+        dirty.groups.clear();
+        dirty.trash.clear();
+        dirty.deletedGroups.clear();
+        dirty.deletedTrash.clear();
+        dirty.trashCleared = false;
+        dirty.settings = false;
+        dirty.fullSync = false;
+        renderApp();
+        toast('App reset');
+      }
+    });
+  });
+
+  dm.append(h('div', { class: 'dm-grid' }, exportBtn, mergeBtn, replaceBtn, resetBtn));
+  page.append(dm);
+
+  container.append(page);
+}
+
+/* ------------------------------------------------------------
+   Export / Import
+   ------------------------------------------------------------ */
+function exportAllData() {
+  const payload = {
+    app: 'listly',
+    version: 2,
+    exportedAt: new Date().toISOString(),
+    groups: State.groups,
+    trash: State.trash,
+    settings: State.settings
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = h('a', { href: url, download: `listly-backup-${Date.now()}.json` });
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1500);
+  toast('Backup downloaded');
+}
+
+function importData(mode) {
+  const input = h('input', { type: 'file', accept: '.json,application/json', style: { display: 'none' } });
+  document.body.append(input);
+  input.addEventListener('change', () => {
+    const file = input.files && input.files[0];
+    if (!file) { input.remove(); return; }
+    const fr = new FileReader();
+    fr.onload = () => {
+      input.remove();
+      let data;
+      try {
+        data = JSON.parse(fr.result);
+      } catch (e) {
+        toast('That file is not valid JSON', 'error');
+        return;
+      }
+      if (!data || !Array.isArray(data.groups)) {
+        toast('That file is not a valid app backup', 'error');
+        return;
+      }
+
+      if (mode === 'replace') {
+        State.groups = data.groups;
+        State.trash = Array.isArray(data.trash) ? data.trash : [];
+        if (data.settings && data.settings.theme) State.settings.theme = data.settings.theme;
+        applyTheme();
+      } else {
+        mergeData(data);
+      }
+
+      sanitizeState();
+      markFullSync();
+      save();
+      renderApp();
+      toast(mode === 'replace' ? 'Data replaced' : 'Data merged');
+    };
+    fr.readAsText(file);
+  });
+  input.click();
+}
+
+function mergeData(incoming) {
+  (incoming.groups || []).forEach(inGroup => {
+    const existing = State.groups.find(g => g.id === inGroup.id);
+    if (!existing) {
+      State.groups.push(inGroup);
+      return;
+    }
+    existing.name = inGroup.name || existing.name;
+    existing.description = inGroup.description || existing.description;
+    existing.updatedAt = inGroup.updatedAt || existing.updatedAt;
+    (inGroup.entries || []).forEach(inEntry => {
+      if (!existing.entries.some(e => e.id === inEntry.id)) {
+        existing.entries.push(inEntry);
+      }
+    });
+    (inGroup.tags || []).forEach(t => {
+      if (!existing.tags.some(x => x.id === t.id)) existing.tags.push(t);
+    });
+  });
+
+  (incoming.trash || []).forEach(t => {
+    if (!State.trash.some(x => x.id === t.id)) State.trash.push(t);
+  });
+}
+
+/* ============================================================
+   STATE SANITIZER — used after load / import
+   ============================================================ */
+function sanitizeState() {
+  State.groups.forEach(g => {
+    if (!g.id) g.id = uid();
+    g.entries = g.entries || [];
+    g.tags = g.tags || [];
+    g.fields = Object.assign({}, DEFAULT_FIELDS, g.fields || {});
+    g.fields.name = true;
+    if (!g.createdAt) g.createdAt = new Date().toISOString();
+    if (!g.updatedAt) g.updatedAt = g.createdAt;
+    g.entries.forEach(e => {
+      if (!e.id) e.id = uid();
+      e.images = e.images || [];
+      e.tags = e.tags || [];
+      e.done = !!e.done;
+      if (typeof e.url !== 'string') e.url = '';
+      if (typeof e.location !== 'string') e.location = '';
+      if (!e.createdAt) e.createdAt = new Date().toISOString();
+      if (!e.updatedAt) e.updatedAt = e.createdAt;
+    });
+  });
+  State.trash = (State.trash || []).filter(t => t && t.id && t.data);
+  State.trash.forEach(t => {
+    if (!t.deletedAt) t.deletedAt = new Date().toISOString();
+  });
+}
+
+/* ============================================================
+   BOOT
+   ============================================================ */
+function wireNavigation() {
+  document.querySelectorAll('.nav-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      currentView = tab.dataset.view;
+      closePopover();
+      renderApp();
+    });
+  });
+
+  /* Brand → reload the app tab */
+  const brand = document.getElementById('brand');
+  brand.addEventListener('click', () => location.reload());
+  brand.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); location.reload(); }
+  });
+
+  const ng = document.getElementById('new-group-btn');
+  ng.replaceChildren(iconEl('plus', 15), document.createTextNode('New Group'));
+  ng.addEventListener('click', () => openGroupModal(null));
+}
+
+async function boot() {
+  const splash = document.getElementById('splash');
+
+  /* --- Load data --- */
+  let groups = [], trash = [], theme = 'device';
+  let loaded = false;
+
+  if (DB._supported) {
+    try {
+      await DB.open();
+      groups = await DB.getAllGroups();
+      trash = await DB.getAllTrash();
+      const storedTheme = await DB.getSetting('theme');
+      if (storedTheme) theme = storedTheme;
+      loaded = true;
+    } catch (err) {
+      console.error('[Boot] IndexedDB load failed:', err);
+      toast('Could not open local storage — data will not be saved.', 'error');
+    }
+  } else {
+    console.warn('[Boot] IndexedDB is not supported in this browser.');
+  }
+
+  /* --- One-time migration from old sessionStorage format --- */
+  const legacyKey = 'listing-app:session:v1';
+  if (loaded && groups.length === 0 && trash.length === 0) {
+    const legacy = sessionStorage.getItem(legacyKey);
+    if (legacy) {
+      try {
+        const parsed = JSON.parse(legacy);
+        if (parsed && Array.isArray(parsed.groups)) {
+          groups = parsed.groups;
+          trash = Array.isArray(parsed.trash) ? parsed.trash : [];
+          if (parsed.settings && parsed.settings.theme) theme = parsed.settings.theme;
+          markFullSync();
+          toast('Migrated previous session data');
+        }
+      } catch (e) { /* ignore */ }
+    }
+    sessionStorage.removeItem(legacyKey);
+  } else if (!loaded) {
+    sessionStorage.removeItem(legacyKey);
+  }
+
+  /* --- Assign to state --- */
+  State.groups = groups;
+  State.trash = trash;
+  State.settings.theme = theme;
+
+  sanitizeState();
+
+  /* --- Purge trash older than 30 days --- */
+  const now = Date.now();
+  const expiredIds = [];
+  State.trash = State.trash.filter(item => {
+    const old = now - new Date(item.deletedAt).getTime() >= TRASH_LIFETIME_MS;
+    if (old) expiredIds.push(item.id);
+    return !old;
+  });
+  expiredIds.forEach(id => markTrashDeleted(id));
+
+  applyTheme();
+  wireNavigation();
+  renderApp();
+
+  /* Persist any boot-time changes (migration, purge, sanitize) */
+  if (hasPendingChanges()) flush();
+
+  if (expiredIds.length) {
+    toast(`${expiredIds.length} item(s) auto-removed from Trash after 30 days`);
+  }
+
+  /* --- Hide splash --- */
+  if (splash) {
+    splash.classList.add('hide');
+    setTimeout(() => splash.remove(), 300);
+  }
+}
+
+/* Kick off boot */
+boot();
+</script>
+</body>
+</html>
