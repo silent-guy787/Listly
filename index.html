@@ -391,6 +391,19 @@ main { flex: 1; min-height: 0; position: relative; }
 }
 
 .group-head { padding: 20px 20px 12px; flex: none; }
+.group-col { position: relative; }
+.group-col.is-hidden { background: var(--col); }
+.hidden-cover {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; padding: 24px; text-align: center; animation: coverIn .25s ease-out;
+}
+.hidden-cover .hc-icon {
+  width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--state-hover); color: var(--muted);
+}
+.hidden-cover .hc-name { margin: 0; font-size: 18px; font-weight: 400; overflow-wrap: anywhere; }
+.hidden-cover .hc-sub { margin: 0; color: var(--muted); font-size: 13px; }
+@keyframes coverIn { from { opacity: 0; transform: scale(.97); } }
 .group-head-top { display: flex; align-items: flex-start; gap: 8px; }
 .group-name {
   margin: 0; font-size: 20px; font-weight: 500; letter-spacing: 0;
@@ -404,6 +417,13 @@ main { flex: 1; min-height: 0; position: relative; }
 
 .group-tools { display: flex; align-items: center; gap: 8px; margin-top: 14px; }
 .group-tools .spacer { flex: 1; }
+/* Keep all five controls visible: tag/sort buttons shrink (label ellipsizes), icon buttons stay put */
+.group-tools { gap: 6px; }
+.group-tools .spacer { flex: 1 1 0; min-width: 0; }
+.group-tools .tool-btn { flex: 0 1 auto; min-width: 0; max-width: none; padding: 0 12px; gap: 6px; }
+.group-tools.second { margin-top: 6px; justify-content: flex-start; }
+.group-tools .tool-btn .ico { flex: none; }
+.group-tools .icon-btn { width: 32px; height: 32px; }
 
 .tool-btn {
   display: inline-flex; align-items: center; gap: 6px;
@@ -843,8 +863,8 @@ html[data-theme="dark"] .toast { background: #e3e3e3; color: #1f1f1f; }
 /* ============================================================
    FULL SCREEN MODE (entry viewer + entry editor)
    ============================================================ */
-.overlay, .modal-backdrop { transition: opacity .18s, padding .2s; }
-.overlay-panel, .modal { transition: transform .15s, border-radius .2s; }
+.overlay, .modal-backdrop { transition: opacity .18s; }
+.overlay-panel, .modal { transition: transform .15s; }
 .overlay.fullscreen, .modal-backdrop.fullscreen { padding: 0; }
 .overlay.fullscreen .overlay-panel {
   max-width: none; max-height: none; height: 100%; border-radius: 0;
@@ -984,6 +1004,8 @@ const ICON_PATHS = {
   link: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
   expand: '<path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/>',
   collapse: '<path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="m14 10 7-7"/><path d="m3 21 7-7"/>',
+  eye: '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>',
+  eyeOff: '<path d="M9.9 4.2A10 10 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-2.2 3.2"/><path d="M6.6 6.6A16.6 16.600 0 0 0 2 12s3.6 7 10 7a9.7 9.700 0 0 0 5.4-1.600"/><path d="M9.9 9.900a3 3 0 0 0 4.2 4.2"/><path d="m2 2 20 20"/>',
   pin: '<path d="M12 21s-7-5.7-7-11a7 7 0 1 1 14 0c0 5.3-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>'
 };
 
@@ -1629,6 +1651,27 @@ function openPopover(anchor, content) {
    ============================================================ */
 let modalStack = [];
 
+/* Smoothly animates a panel between normal and full screen (both directions). */
+function animateFullscreenToggle(backdrop, panel, toggle) {
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !panel.animate) { toggle(); return; }
+  const running = [...panel.getAnimations(), ...backdrop.getAnimations()].filter(a => a.id === 'fs-anim');
+  const f = panel.getBoundingClientRect();
+  const fr = getComputedStyle(panel).borderRadius;
+  const fp = getComputedStyle(backdrop).padding;
+  running.forEach(a => a.cancel());
+  toggle();
+  const l = panel.getBoundingClientRect();
+  const lr = getComputedStyle(panel).borderRadius;
+  const lp = getComputedStyle(backdrop).padding;
+  const opts = { duration: 280, easing: 'cubic-bezier(.2,0,0,1)' };
+  const px = r => ({ width: r.width + 'px', height: r.height + 'px', maxWidth: r.width + 'px', maxHeight: r.height + 'px' });
+  const a1 = panel.animate([{ ...px(f), borderRadius: fr }, { ...px(l), borderRadius: lr }], opts);
+  const a2 = backdrop.animate([{ padding: fp }, { padding: lp }], opts);
+  a1.id = a2.id = 'fs-anim';
+  a1.onfinish = a1.oncancel = () => scheduleScrollbars();
+}
+
 function openModal({ title, body, actions = [], wide = false, expandable = false, fullscreen = false }) {
   const backdrop = h('div', { class: 'modal-backdrop' });
   const modal = h('div', { class: 'modal' + (wide ? ' modal-wide' : '') });
@@ -1643,8 +1686,10 @@ function openModal({ title, body, actions = [], wide = false, expandable = false
       scheduleScrollbars();
     };
     fsBtn.addEventListener('click', () => {
-      modal.classList.toggle('fullscreen');
-      backdrop.classList.toggle('fullscreen');
+      animateFullscreenToggle(backdrop, modal, () => {
+        modal.classList.toggle('fullscreen');
+        backdrop.classList.toggle('fullscreen');
+      });
       sync();
     });
     if (fullscreen) { modal.classList.add('fullscreen'); backdrop.classList.add('fullscreen'); }
@@ -1745,8 +1790,28 @@ function renderHome(container) {
 /* ------------------------------------------------------------
    Group column
    ------------------------------------------------------------ */
+function setGroupHidden(group, hidden) {
+  group.hidden = !!hidden;
+  touchGroup(group.id);
+  save();
+  renderApp();
+}
+
 function renderGroupColumn(group) {
-  const col = h('div', { class: 'group-col', 'data-group': group.id });
+  const col = h('div', { class: 'group-col' + (group.hidden ? ' is-hidden' : ''), 'data-group': group.id });
+
+  if (group.hidden) {
+    // Content is intentionally not rendered at all while hidden.
+    const reveal = h('button', { class: 'btn primary', type: 'button' }, iconEl('eye', 15), 'Reveal');
+    reveal.addEventListener('click', () => setGroupHidden(group, false));
+    col.append(h('div', { class: 'hidden-cover' },
+      h('div', { class: 'hc-icon' }, iconEl('eyeOff', 28)),
+      h('h2', { class: 'hc-name' }, group.name),
+      h('p', { class: 'hc-sub' }, 'This group is hidden'),
+      reveal
+    ));
+    return col;
+  }
 
   const head = h('div', { class: 'group-head' });
 
@@ -1791,13 +1856,17 @@ function renderGroupColumn(group) {
   const infoBtn = h('button', { class: 'icon-btn', type: 'button', title: 'Group info' }, iconEl('info', 15));
   infoBtn.addEventListener('click', () => openGroupInfo(group));
 
+  const hideBtn = h('button', { class: 'icon-btn', type: 'button', title: 'Hide group' }, iconEl('eyeOff', 15));
+  hideBtn.addEventListener('click', () => setGroupHidden(group, true));
+
   head.append(
     h('div', { class: 'group-tools' },
       filterBtn,
       sortBtn,
       h('div', { class: 'spacer' }),
-      editBtn, delBtn, infoBtn
-    )
+      editBtn, hideBtn
+    ),
+    h('div', { class: 'group-tools second' }, delBtn, infoBtn)
   );
 
   const addEntryBtn = h('button', { class: 'btn primary block', type: 'button' },
@@ -2752,7 +2821,10 @@ function openEntryOverlay(group, entry) {
     overlayFullscreenPref = on;
     scheduleScrollbars();
   };
-  fsBtn.addEventListener('click', () => { ov.classList.toggle('fullscreen'); syncFs(); });
+  fsBtn.addEventListener('click', () => {
+    animateFullscreenToggle(ov, panel, () => ov.classList.toggle('fullscreen'));
+    syncFs();
+  });
   if (overlayFullscreenPref) ov.classList.add('fullscreen');
   syncFs();
 
